@@ -1,59 +1,37 @@
 export const currentProjects = [
   {
-    title: "AI-Powered Web App",
-    description: "Building an intelligent web application using React and machine learning APIs",
-    link: "https://github.com/ziad/ai-web-app",
-    tech: ["React", "TypeScript", "AI/ML"]
+    title: "bitcoin educational channel",
+    description: "sharing knowledge about the bitcoin network",
+    link: "https://www.youtube.com/@bitcoin_zillennial",
+    tech: ["Bitcoin", "Education", "YouTube"]
   },
   {
-    title: "Mobile App Development",
-    description: "Creating a cross-platform mobile application for productivity",
-    link: "https://github.com/ziad/mobile-app",
-    tech: ["React Native", "Node.js", "MongoDB"]
-  },
-  {
-    title: "Open Source Library",
-    description: "Contributing to and maintaining a popular JavaScript library",
-    link: "https://github.com/ziad/js-library",
-    tech: ["JavaScript", "npm", "Testing"]
+    title: "homemade sourdough bakery",
+    description: "place an order using get in touch (website in construction)",
+    link: "#contact",
+    tech: ["Sourdough", "Baking", "Local Business"]
   }
 ];
 
 export const pastProjects = [
   {
-    title: "E-commerce Platform",
-    description: "Full-stack e-commerce solution with payment integration",
-    link: "https://github.com/ziad/ecommerce",
-    tech: ["Vue.js", "Python", "PostgreSQL"]
+    title: "all zee had podcast",
+    description: "podcast episodes exploring various topics and conversations",
+    link: "https://youtu.be/XAUwSv9vefc?si=t6izmd33w_C2g1ka",
+    tech: ["Podcast", "Content Creation", "Audio"]
   },
   {
-    title: "Portfolio Website",
-    description: "Responsive portfolio website for a design agency",
-    link: "https://designagency.example.com",
-    tech: ["HTML5", "SCSS", "JavaScript"]
-  },
-  {
-    title: "Data Visualization Tool",
-    description: "Interactive dashboard for business analytics",
-    link: "https://github.com/ziad/data-viz",
-    tech: ["D3.js", "React", "Express"]
+    title: "my fitness journey",
+    description: "documenting my personal fitness transformation and insights",
+    link: "https://youtu.be/nNhXbhku30E?si=1Rrz0Qczn0tK2vMI",
+    tech: ["Fitness", "Personal Development", "Video"]
   }
 ];
 
-export const resources = [
+export const blogPosts = [
   {
-    title: "Blog",
-    description: "Technical articles and thoughts on web development",
-    link: "https://blog.ziad.dev"
-  },
-  {
-    title: "Newsletter",
-    description: "Weekly insights on tech trends and development tips",
-    link: "https://newsletter.ziad.dev"
-  },
-  {
-    title: "Code Snippets",
-    description: "Useful code snippets and development tools",
-    link: "https://snippets.ziad.dev"
+    title: "bitcoin is here to save you and me",
+    description: "my thoughts on bitcoin and its role in saving humanity",
+    link: "https://primal.net/e/naddr1qvzqqqr4gupzpmkhefw3w6j7ca9f6jspxylw8s7jhlvzlkvx0e8fl35seuv3m68tqq0ky6t5vdhkjm3ddpjhyefdw3hj6umpwejj67t0w5kkzmny94kk2hmng6z"
   }
 ];
