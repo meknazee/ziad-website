@@ -97,7 +97,7 @@ const Index = () => {
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           <h2 className="text-5xl md:text-7xl font-display font-bold text-foreground mb-6 tracking-tight matrix-glow">
-            hello, i'm <span className="text-primary">Z</span>
+            hello, i'm <span className="text-primary">z</span>
           </h2>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">let this be my contribution to the world</p>
           <div className="flex justify-center space-x-4">
