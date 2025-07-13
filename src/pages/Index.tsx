@@ -235,9 +235,7 @@ const Index = () => {
             <User className="w-8 h-8 text-primary mr-4" />
             <h2 className="text-4xl font-bold text-foreground">get in touch</h2>
           </div>
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            i'm always open to discussing new opportunities, collaborations, or just having a great conversation about technology.
-          </p>
+          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">i</p>
           <div className="flex justify-center space-x-6">
             <a href="mailto:hello@ziad.dev" className="flex items-center space-x-2 bg-primary text-primary-foreground px-6 py-3 rounded matrix-border hover:bg-primary/80 transition-colors duration-200 font-medium">
               <Mail className="w-5 h-5" />
