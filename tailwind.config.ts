@@ -65,7 +65,8 @@ export default {
 				}
 			},
 			fontFamily: {
-				'display': ['Space Mono', 'monospace'],
+				'display': ['Share Tech Mono', 'Courier Prime', 'monospace'],
+				'mono': ['Share Tech Mono', 'Courier Prime', 'monospace'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

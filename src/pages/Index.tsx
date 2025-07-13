@@ -73,51 +73,51 @@ const Index = () => {
     }
   ];
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    return (
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+      <header className="sticky top-0 z-50 matrix-card border-b border-primary/30">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-3xl font-display font-bold tracking-wider text-slate-800">
-            Z I A D
+          <h1 className="text-3xl font-display font-bold tracking-wider text-foreground matrix-glow">
+            z i a d
           </h1>
           
           {/* Navigation Menu */}
           <nav className="hidden md:flex space-x-8">
             <button 
               onClick={() => scrollToSection('current-projects')}
-              className="text-slate-600 hover:text-purple-600 transition-colors duration-200 font-medium"
+              className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
             >
-              Current Projects
+              current projects
             </button>
             <button 
               onClick={() => scrollToSection('past-projects')}
-              className="text-slate-600 hover:text-purple-600 transition-colors duration-200 font-medium"
+              className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
             >
-              Past Projects
+              past projects
             </button>
             <button 
               onClick={() => scrollToSection('podcast')}
-              className="text-slate-600 hover:text-purple-600 transition-colors duration-200 font-medium"
+              className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
             >
-              Podcast
+              podcast
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="text-slate-600 hover:text-purple-600 transition-colors duration-200 font-medium"
+              className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
             >
-              Contact
+              contact
             </button>
             <button 
               onClick={() => scrollToSection('resources')}
-              className="text-slate-600 hover:text-purple-600 transition-colors duration-200 font-medium"
+              className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
             >
-              Resources
+              resources
             </button>
           </nav>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-slate-600">
+          <button className="md:hidden text-muted-foreground">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -128,50 +128,50 @@ const Index = () => {
       {/* Hero Section */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
-          <h2 className="text-5xl md:text-7xl font-display font-bold text-slate-800 mb-6 tracking-tight">
-            Hello, I'm <span className="text-purple-600">ZIAD</span>
+          <h2 className="text-5xl md:text-7xl font-display font-bold text-foreground mb-6 tracking-tight matrix-glow">
+            hello, i'm <span className="text-primary">ziad</span>
           </h2>
-          <p className="text-xl md:text-2xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            A passionate developer creating digital experiences and sharing knowledge through code, projects, and conversations.
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+            a passionate developer creating digital experiences and sharing knowledge through code, projects, and conversations.
           </p>
           <div className="flex justify-center space-x-4">
             <button 
               onClick={() => scrollToSection('current-projects')}
-              className="bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition-colors duration-200 font-medium"
+              className="bg-primary text-primary-foreground px-8 py-3 rounded matrix-border hover:bg-primary/80 transition-colors duration-200 font-medium"
             >
-              View My Work
+              view my work
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="border border-purple-600 text-purple-600 px-8 py-3 rounded-lg hover:bg-purple-50 transition-colors duration-200 font-medium"
+              className="border border-primary text-primary px-8 py-3 rounded hover:bg-primary/10 transition-colors duration-200 font-medium"
             >
-              Get In Touch
+              get in touch
             </button>
           </div>
         </div>
       </section>
 
       {/* Current Projects Section */}
-      <section id="current-projects" className="py-16 px-6 bg-white">
+      <section id="current-projects" className="py-16 px-6 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center mb-12">
-            <Briefcase className="w-8 h-8 text-purple-600 mr-4" />
-            <h2 className="text-4xl font-bold text-slate-800">Current Projects</h2>
+            <Briefcase className="w-8 h-8 text-primary mr-4" />
+            <h2 className="text-4xl font-bold text-foreground">current projects</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {currentProjects.map((project, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <Card key={index} className="group matrix-card hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-primary/20">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-purple-600 transition-colors">
-                    {project.title}
+                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors lowercase">
+                    {project.title.toLowerCase()}
                   </h3>
-                  <p className="text-slate-600 mb-4 leading-relaxed">
-                    {project.description}
+                  <p className="text-muted-foreground mb-4 leading-relaxed lowercase">
+                    {project.description.toLowerCase()}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech, techIndex) => (
-                      <span key={techIndex} className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">
-                        {tech}
+                      <span key={techIndex} className="bg-primary/20 text-primary px-3 py-1 rounded text-sm font-medium border border-primary/30">
+                        {tech.toLowerCase()}
                       </span>
                     ))}
                   </div>
@@ -179,9 +179,9 @@ const Index = () => {
                     href={project.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors"
+                    className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
                   >
-                    View Project <ExternalLink className="w-4 h-4 ml-2" />
+                    view project <ExternalLink className="w-4 h-4 ml-2" />
                   </a>
                 </CardContent>
               </Card>
@@ -191,26 +191,26 @@ const Index = () => {
       </section>
 
       {/* Past Projects Section */}
-      <section id="past-projects" className="py-16 px-6 bg-slate-50">
+      <section id="past-projects" className="py-16 px-6 bg-background">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center mb-12">
-            <FolderOpen className="w-8 h-8 text-purple-600 mr-4" />
-            <h2 className="text-4xl font-bold text-slate-800">Past Projects</h2>
+            <FolderOpen className="w-8 h-8 text-primary mr-4" />
+            <h2 className="text-4xl font-bold text-foreground">past projects</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {pastProjects.map((project, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <Card key={index} className="group matrix-card hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-primary/20">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-purple-600 transition-colors">
-                    {project.title}
+                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors lowercase">
+                    {project.title.toLowerCase()}
                   </h3>
-                  <p className="text-slate-600 mb-4 leading-relaxed">
-                    {project.description}
+                  <p className="text-muted-foreground mb-4 leading-relaxed lowercase">
+                    {project.description.toLowerCase()}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech, techIndex) => (
-                      <span key={techIndex} className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">
-                        {tech}
+                      <span key={techIndex} className="bg-primary/20 text-primary px-3 py-1 rounded text-sm font-medium border border-primary/30">
+                        {tech.toLowerCase()}
                       </span>
                     ))}
                   </div>
@@ -218,9 +218,9 @@ const Index = () => {
                     href={project.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors"
+                    className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
                   >
-                    View Project <ExternalLink className="w-4 h-4 ml-2" />
+                    view project <ExternalLink className="w-4 h-4 ml-2" />
                   </a>
                 </CardContent>
               </Card>
@@ -230,35 +230,35 @@ const Index = () => {
       </section>
 
       {/* Podcast Section */}
-      <section id="podcast" className="py-16 px-6 bg-white">
+      <section id="podcast" className="py-16 px-6 bg-muted/30">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center mb-12">
-            <Mic className="w-8 h-8 text-purple-600 mr-4" />
-            <h2 className="text-4xl font-bold text-slate-800">Podcast</h2>
+            <Mic className="w-8 h-8 text-primary mr-4" />
+            <h2 className="text-4xl font-bold text-foreground">podcast</h2>
           </div>
-          <Card className="hover:shadow-xl transition-shadow duration-300">
+          <Card className="matrix-card hover:shadow-2xl transition-shadow duration-300 border-primary/20">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">Tech Talks with ZIAD</h3>
-              <p className="text-slate-600 mb-6 text-lg leading-relaxed">
-                Join me for weekly conversations about technology, development, and the future of digital innovation. 
-                I interview industry experts, share insights, and discuss the latest trends in tech.
+              <h3 className="text-2xl font-bold text-foreground mb-4">tech talks with ziad</h3>
+              <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
+                join me for weekly conversations about technology, development, and the future of digital innovation. 
+                i interview industry experts, share insights, and discuss the latest trends in tech.
               </p>
               <div className="flex justify-center space-x-4">
                 <a 
                   href="https://spotify.com/podcast/ziad" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors duration-200 font-medium"
+                  className="bg-primary text-primary-foreground px-6 py-3 rounded matrix-border hover:bg-primary/80 transition-colors duration-200 font-medium"
                 >
-                  Listen on Spotify
+                  listen on spotify
                 </a>
                 <a 
                   href="https://podcasts.apple.com/podcast/ziad" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors duration-200 font-medium"
+                  className="bg-accent text-accent-foreground px-6 py-3 rounded matrix-border hover:bg-accent/80 transition-colors duration-200 font-medium"
                 >
-                  Apple Podcasts
+                  apple podcasts
                 </a>
               </div>
             </CardContent>
@@ -267,34 +267,34 @@ const Index = () => {
       </section>
 
       {/* Resources Section */}
-      <section id="resources" className="py-16 px-6 bg-slate-50">
+      <section id="resources" className="py-16 px-6 bg-background">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center mb-12">
-            <Globe className="w-8 h-8 text-purple-600 mr-4" />
-            <h2 className="text-4xl font-bold text-slate-800">Resources</h2>
+            <Globe className="w-8 h-8 text-primary mr-4" />
+            <h2 className="text-4xl font-bold text-foreground">resources</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {resources.map((resource, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <Card key={index} className="group matrix-card hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-primary/20">
                 <CardContent className="p-6 text-center">
                   <div className="mb-4 flex justify-center">
-                    <div className="p-3 bg-purple-100 rounded-full group-hover:bg-purple-200 transition-colors">
+                    <div className="p-3 bg-primary/20 rounded border border-primary/30 group-hover:bg-primary/30 transition-colors">
                       {resource.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-purple-600 transition-colors">
-                    {resource.title}
+                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors lowercase">
+                    {resource.title.toLowerCase()}
                   </h3>
-                  <p className="text-slate-600 mb-4 leading-relaxed">
-                    {resource.description}
+                  <p className="text-muted-foreground mb-4 leading-relaxed lowercase">
+                    {resource.description.toLowerCase()}
                   </p>
                   <a 
                     href={resource.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors"
+                    className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
                   >
-                    Visit <ExternalLink className="w-4 h-4 ml-2" />
+                    visit <ExternalLink className="w-4 h-4 ml-2" />
                   </a>
                 </CardContent>
               </Card>
@@ -304,41 +304,41 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-6 bg-white">
+      <section id="contact" className="py-16 px-6 bg-muted/30">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center mb-12">
-            <User className="w-8 h-8 text-purple-600 mr-4" />
-            <h2 className="text-4xl font-bold text-slate-800">Get In Touch</h2>
+            <User className="w-8 h-8 text-primary mr-4" />
+            <h2 className="text-4xl font-bold text-foreground">get in touch</h2>
           </div>
-          <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-            I'm always open to discussing new opportunities, collaborations, or just having a great conversation about technology.
+          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            i'm always open to discussing new opportunities, collaborations, or just having a great conversation about technology.
           </p>
           <div className="flex justify-center space-x-6">
             <a 
               href="mailto:hello@ziad.dev" 
-              className="flex items-center space-x-2 bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors duration-200 font-medium"
+              className="flex items-center space-x-2 bg-primary text-primary-foreground px-6 py-3 rounded matrix-border hover:bg-primary/80 transition-colors duration-200 font-medium"
             >
               <Mail className="w-5 h-5" />
-              <span>Email Me</span>
+              <span>email me</span>
             </a>
             <a 
               href="https://github.com/ziad" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 border border-slate-300 text-slate-700 px-6 py-3 rounded-lg hover:bg-slate-50 transition-colors duration-200 font-medium"
+              className="flex items-center space-x-2 border border-primary text-primary px-6 py-3 rounded hover:bg-primary/10 transition-colors duration-200 font-medium"
             >
               <Github className="w-5 h-5" />
-              <span>GitHub</span>
+              <span>github</span>
             </a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 bg-slate-800 text-white">
+      <footer className="py-8 px-6 bg-muted border-t border-primary/30">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="text-slate-400">
-            © 2024 ZIAD. Built with passion and lots of coffee.
+          <p className="text-muted-foreground">
+            © 2024 ziad. built with passion and lots of coffee.
           </p>
         </div>
       </footer>
