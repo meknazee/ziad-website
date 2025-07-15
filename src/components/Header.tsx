@@ -19,6 +19,18 @@ export const Header = ({ scrollToSection }: HeaderProps) => {
             current projects
           </button>
           <button 
+            onClick={() => scrollToSection('tennis-coaching')} 
+            className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
+          >
+            tennis coaching
+          </button>
+          <button 
+            onClick={() => scrollToSection('bitcoin-resources')} 
+            className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
+          >
+            bitcoin resources
+          </button>
+          <button 
             onClick={() => scrollToSection('other-projects')} 
             className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
           >
@@ -35,12 +47,6 @@ export const Header = ({ scrollToSection }: HeaderProps) => {
             className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
           >
             contact
-          </button>
-          <button 
-            onClick={() => scrollToSection('resources')} 
-            className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
-          >
-            resources
           </button>
         </nav>
 
