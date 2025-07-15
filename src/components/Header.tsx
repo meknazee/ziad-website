@@ -4,10 +4,10 @@ interface HeaderProps {
 
 export const Header = ({ scrollToSection }: HeaderProps) => {
   return (
-    <header className="sticky top-0 z-50 matrix-card border-b border-primary/30">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border suits-shadow">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="text-3xl font-display font-bold tracking-wider text-foreground matrix-glow">
-          z i a d
+        <h1 className="text-3xl font-display font-medium tracking-tight text-foreground">
+          ziad
         </h1>
         
         {/* Navigation Menu */}
