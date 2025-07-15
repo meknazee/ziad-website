@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { ProjectsSection } from "@/components/ProjectsSection";
+import { BitcoinResourcesSection } from "@/components/BitcoinResourcesSection";
 import { OtherProjectsSection } from "@/components/OtherProjectsSection";
 import { PodcastSection } from "@/components/PodcastSection";
 
@@ -22,6 +23,7 @@ const Index = () => {
       <Header scrollToSection={scrollToSection} />
       <Hero scrollToSection={scrollToSection} />
       <ProjectsSection />
+      <BitcoinResourcesSection />
       <OtherProjectsSection />
       <PodcastSection />
       
