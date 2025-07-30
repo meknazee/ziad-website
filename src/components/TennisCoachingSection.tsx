@@ -29,6 +29,11 @@ export const TennisCoachingSection = () => {
                 tools to help you get better on the court
               </CardDescription>
             </CardHeader>
+            <CardContent>
+              <a href="/strength-conditioning" className="inline-flex items-center text-primary hover:underline">
+                view programs →
+              </a>
+            </CardContent>
           </Card>
         </div>
       </div>
