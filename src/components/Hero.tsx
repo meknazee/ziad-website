@@ -14,9 +14,7 @@ export const Hero = ({
           <button onClick={() => scrollToSection('current-projects')} className="bg-primary text-primary-foreground px-8 py-3 rounded matrix-border hover:bg-primary/80 transition-colors duration-200 font-medium">
             view my work
           </button>
-          <button onClick={() => scrollToSection('contact')} className="border border-primary text-primary px-8 py-3 rounded hover:bg-primary/10 transition-colors duration-200 font-medium">
-            get in touch
-          </button>
+          <button onClick={() => scrollToSection('contact')} className="border border-primary text-primary px-8 py-3 rounded hover:bg-primary/10 transition-colors duration-200 font-medium">tennis coaching</button>
         </div>
       </div>
     </section>;
