@@ -1,5 +1,6 @@
 import { Trophy } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import signalLogo from "../assets/signal-logo.png";
 export const TennisCoachingSection = () => {
   return <section id="tennis-coaching" className="py-16 px-6">
       <div className="max-w-6xl mx-auto">
@@ -16,8 +17,8 @@ export const TennisCoachingSection = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <a href="https://signal.me/#p/+meknazee.63" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-primary hover:underline">
-                message on signal →
+              <a href="https://signal.me/#p/+meknazee.63" target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:opacity-80 transition-opacity">
+                <img src={signalLogo} alt="Signal" className="w-8 h-8" />
               </a>
             </CardContent>
           </Card>
