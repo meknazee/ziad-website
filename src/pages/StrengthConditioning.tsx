@@ -1,4 +1,4 @@
-import { ArrowLeft, Dumbbell, Zap, Target, Heart } from "lucide-react";
+import { ArrowLeft, Dumbbell, Zap, Target, Heart, Puzzle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -43,7 +43,10 @@ const StrengthConditioning = () => {
 
         <section className="mb-12">
           <div className="bg-muted/50 rounded-lg p-6">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">the missing piece</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-4 flex items-center">
+              <Puzzle className="w-6 h-6 text-primary mr-3" />
+              the missing piece
+            </h2>
             <p className="text-muted-foreground italic">
               your tennis level is a reflection of your conditionning level.
               no matter where your game is at, conditionning is how you level up.
