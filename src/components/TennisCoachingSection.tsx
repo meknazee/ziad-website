@@ -21,6 +21,14 @@ export const TennisCoachingSection = () => {
               </a>
             </CardContent>
           </Card>
+          <Card className="group hover:shadow-lg transition-shadow duration-300">
+            <CardHeader>
+              <CardTitle className="text-xl group-hover:text-primary transition-colors">strength & conditioning</CardTitle>
+              <CardDescription>
+                s&c tools and programs to help you get better on the court
+              </CardDescription>
+            </CardHeader>
+          </Card>
         </div>
       </div>
     </section>;
