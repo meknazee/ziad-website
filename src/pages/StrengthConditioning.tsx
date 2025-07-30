@@ -43,7 +43,7 @@ const StrengthConditioning = () => {
 
         <section className="mb-12">
           <div className="bg-muted/50 rounded-lg p-6">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">story placeholder</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-4">the missing piece</h2>
             <p className="text-muted-foreground italic">
               your tennis level is a reflection of your conditionning level.
               no matter where your game is at, conditionning is how you level up.
