@@ -24,8 +24,8 @@ const Index = () => {
       <Header scrollToSection={scrollToSection} />
       <Hero scrollToSection={scrollToSection} />
       <TennisCoachingSection />
-      <ProjectsSection />
       <BitcoinResourcesSection />
+      <ProjectsSection />
       <OtherProjectsSection />
       <PodcastSection />
       
