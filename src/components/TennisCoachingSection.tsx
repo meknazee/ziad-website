@@ -25,7 +25,7 @@ export const TennisCoachingSection = () => {
             <CardHeader>
               <CardTitle className="text-xl group-hover:text-primary transition-colors">strength & conditioning</CardTitle>
               <CardDescription>
-                s&c tools and programs to help you get better on the court
+                tools to help you get better on the court
               </CardDescription>
             </CardHeader>
           </Card>
