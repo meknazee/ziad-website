@@ -42,15 +42,18 @@ const StrengthConditioning = () => {
         </header>
 
         <section className="mb-12">
-          <div className="bg-muted/50 rounded-lg p-6">
-            <h2 className="text-2xl font-semibold text-foreground mb-4 flex items-center">
+          <div className="bg-primary/10 border border-primary/20 rounded-lg p-8 shadow-lg">
+            <h2 className="text-2xl font-semibold text-primary mb-6 flex items-center">
               <Puzzle className="w-6 h-6 text-primary mr-3" />
               the missing piece
             </h2>
-            <p className="text-muted-foreground italic">
+            <p className="text-foreground font-medium text-lg leading-relaxed">
               your tennis level is a reflection of your conditionning level.
+              <br /><br />
               no matter where your game is at, conditionning is how you level up.
+              <br /><br />
               to win matches, you need to move faster, hit harder, recover quicker and last longer than your opponent.
+              <br /><br />
               simple enough. now let's get to work.
             </p>
           </div>
