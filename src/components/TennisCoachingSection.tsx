@@ -44,7 +44,9 @@ export const TennisCoachingSection = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
-                <p className="text-sm text-muted-foreground">coming soon...</p>
+                <a href="https://rollinssports.com/news/2019/3/9/3_9_2019_5320.aspx" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-primary hover:underline text-sm">
+                  rollins sports article →
+                </a>
               </div>
             </CardContent>
           </Card>
