@@ -35,6 +35,19 @@ export const TennisCoachingSection = () => {
               </a>
             </CardContent>
           </Card>
+          <Card className="group hover:shadow-lg transition-shadow duration-300">
+            <CardHeader>
+              <CardTitle className="text-xl group-hover:text-primary transition-colors">tennis highlights</CardTitle>
+              <CardDescription>
+                web articles, videos, and content documenting my tennis journey
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">coming soon...</p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>;
