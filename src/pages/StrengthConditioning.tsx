@@ -48,9 +48,9 @@ const StrengthConditioning = () => {
               the missing piece
             </h2>
             <p className="text-foreground font-medium text-lg leading-relaxed">
-              your tennis level is a reflection of your conditionning level.
+              your tennis level is a reflection of your conditioning level.
               <br /><br />
-              no matter where your game is at, conditionning is how you level up.
+              no matter where your game is at, conditioning is how you level up.
               <br /><br />
               to win matches, you need to move faster, hit harder, recover quicker and last longer than your opponent.
               <br /><br />
