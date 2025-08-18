@@ -35,21 +35,6 @@ export const TennisCoachingSection = () => {
               </a>
             </CardContent>
           </Card>
-          <Card className="group hover:shadow-lg transition-shadow duration-300">
-            <CardHeader>
-              <CardTitle className="text-xl group-hover:text-primary transition-colors">tennis highlights</CardTitle>
-              <CardDescription>
-                web articles, videos, and content documenting my tennis journey
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
-                <a href="https://rollinssports.com/news/2019/3/9/3_9_2019_5320.aspx" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-primary hover:underline text-sm">
-                  rollins sports article →
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>;
