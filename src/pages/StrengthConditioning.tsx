@@ -48,7 +48,7 @@ const StrengthConditioning = () => {
               the missing piece
             </h2>
             <p className="text-foreground font-medium text-lg leading-relaxed">
-              your tennis level is a reflection of your conditioning level.
+              in tennis, you can only go as far as your fitness takes you.
               <br /><br />
               no matter where your game is at, conditioning is how you level up.
               <br /><br />
