@@ -23,45 +23,17 @@ const SchedulePrivateLesson = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">
-                  Tell me about your goals
-                </h2>
-                <div className="aspect-[4/3] w-full">
-                  <iframe
-                    src="[PRIVATE_LESSON_FORM_URL]"
-                    width="100%"
-                    height="100%"
-                    frameBorder="0"
-                    marginHeight={0}
-                    marginWidth={0}
-                    className="rounded-lg border border-border"
-                  >
-                    Loading form...
-                  </iframe>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-2xl font-semibold text-foreground mb-4">
-                  Select your time
-                </h2>
-                <div className="aspect-[4/3] w-full">
-                  <iframe
-                    src="[PRIVATE_LESSON_CALENDAR_URL]"
-                    width="100%"
-                    height="100%"
-                    frameBorder="0"
-                    className="rounded-lg border border-border"
-                  >
-                    Loading calendar...
-                  </iframe>
-                </div>
-              </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="aspect-[4/3] w-full">
+              <iframe
+                src="https://calendar.app.google/KJjySDZgFa6hVBiv7"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                className="rounded-lg border border-border"
+              >
+                Loading booking system...
+              </iframe>
             </div>
           </div>
 
