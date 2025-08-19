@@ -1,11 +1,7 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { ProjectsSection } from "@/components/ProjectsSection";
 import { TennisCoachingSection } from "@/components/TennisCoachingSection";
-import { BitcoinResourcesSection } from "@/components/BitcoinResourcesSection";
 import { OtherProjectsSection } from "@/components/OtherProjectsSection";
-import { PodcastSection } from "@/components/PodcastSection";
-
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 
@@ -24,11 +20,21 @@ const Index = () => {
       <Header scrollToSection={scrollToSection} />
       <Hero scrollToSection={scrollToSection} />
       <TennisCoachingSection />
-      <BitcoinResourcesSection />
-      <ProjectsSection />
+      <div id="strength-conditioning" className="py-16 px-6 bg-muted/30">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-foreground mb-6">Strength & Conditioning</h2>
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            In tennis, you can only go as far as your fitness takes you. Build the physical foundation for elite performance.
+          </p>
+          <a 
+            href="/strength-conditioning" 
+            className="inline-flex items-center text-primary hover:underline text-lg font-medium"
+          >
+            Explore Training Pillars →
+          </a>
+        </div>
+      </div>
       <OtherProjectsSection />
-      <PodcastSection />
-      
       <ContactSection />
       <Footer />
     </div>

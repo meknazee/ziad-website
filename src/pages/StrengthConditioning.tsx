@@ -1,6 +1,7 @@
 import { ArrowLeft, Dumbbell, Zap, Target, Heart, Puzzle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { SESPillarsChart } from "@/components/SES/SESPillarsChart";
 
 const StrengthConditioning = () => {
   const programs = [
@@ -36,31 +37,24 @@ const StrengthConditioning = () => {
         
         <header className="mb-12">
           <h1 className="text-4xl font-bold text-foreground mb-4">strength & conditioning</h1>
-          <p className="text-lg text-muted-foreground">
-            specialized training programs designed to elevate your tennis performance through targeted physical development and conditioning.
+          <p className="text-lg text-muted-foreground mb-8">
+            In tennis, you can only go as far as your fitness takes you. Build the physical foundation for elite performance.
           </p>
+          <a 
+            href="/schedule/strength-conditioning" 
+            className="inline-flex items-center bg-primary text-primary-foreground px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors font-medium"
+          >
+            Schedule S&C Session →
+          </a>
         </header>
 
-        <section className="mb-12">
-          <div className="bg-primary/10 border border-primary/20 rounded-lg p-8 shadow-lg">
-            <h2 className="text-2xl font-semibold text-primary mb-6 flex items-center">
-              <Puzzle className="w-6 h-6 text-primary mr-3" />
-              the missing piece
-            </h2>
-            <p className="text-foreground font-medium text-lg leading-relaxed">
-              in tennis, you can only go as far as your fitness takes you.
-              <br /><br />
-              no matter where your game is at, conditioning is how you level up.
-              <br /><br />
-              to win matches, you need to move faster, hit harder, recover quicker and last longer than your opponent.
-              <br /><br />
-              simple enough. now let's get to work.
-            </p>
-          </div>
+        {/* SES Pillars Chart */}
+        <section className="mb-16">
+          <SESPillarsChart />
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold text-foreground mb-8">training programs</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-8">training pillars</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {programs.map((program, index) => {
               const Icon = program.icon;

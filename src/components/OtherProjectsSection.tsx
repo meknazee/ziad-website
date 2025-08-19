@@ -1,6 +1,6 @@
 import { FolderOpen } from "lucide-react";
 import { ProjectCard } from "./ProjectCard";
-import { pastProjects } from "@/data/projects";
+import { otherProjects } from "@/data/projects";
 
 export const OtherProjectsSection = () => {
   return (
@@ -11,7 +11,7 @@ export const OtherProjectsSection = () => {
           <h2 className="text-4xl font-bold text-foreground">other projects</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {pastProjects.map((project, index) => (
+          {otherProjects.map((project, index) => (
             <ProjectCard key={index} project={project} />
           ))}
         </div>

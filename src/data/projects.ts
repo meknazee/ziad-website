@@ -1,4 +1,4 @@
-export const currentProjects = [
+export const otherProjects = [
   {
     title: "bitcoin educational channel",
     description: "sharing knowledge about the bitcoin network",
@@ -6,14 +6,17 @@ export const currentProjects = [
     tech: ["Bitcoin", "Education", "YouTube"]
   },
   {
+    title: "bitcoin resources",
+    description: "educational content and tools for bitcoin learning",
+    link: "#bitcoin-resources",
+    tech: ["Bitcoin", "Education", "Resources"]
+  },
+  {
     title: "homemade sourdough bakery",
     description: "place an order using get in touch (website in construction)",
     link: "#contact",
     tech: ["Sourdough", "Baking", "Local Business"]
-  }
-];
-
-export const pastProjects = [
+  },
   {
     title: "all zee had podcast",
     description: "podcast episodes exploring various topics and conversations",

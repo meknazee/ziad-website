@@ -13,34 +13,22 @@ export const Header = ({ scrollToSection }: HeaderProps) => {
         {/* Navigation Menu */}
         <nav className="hidden md:flex space-x-8">
           <button 
-            onClick={() => scrollToSection('current-projects')} 
-            className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
-          >
-            current projects
-          </button>
-          <button 
             onClick={() => scrollToSection('tennis-coaching')} 
             className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
           >
             tennis coaching
           </button>
           <button 
-            onClick={() => scrollToSection('bitcoin-resources')} 
+            onClick={() => scrollToSection('strength-conditioning')} 
             className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
           >
-            bitcoin resources
+            strength & conditioning
           </button>
           <button 
             onClick={() => scrollToSection('other-projects')} 
             className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
           >
             other projects
-          </button>
-          <button 
-            onClick={() => scrollToSection('podcast')} 
-            className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
-          >
-            podcast
           </button>
           <button 
             onClick={() => scrollToSection('contact')} 

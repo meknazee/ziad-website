@@ -17,8 +17,11 @@ export const TennisCoachingSection = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <a href="https://signal.me/#p/+meknazee.63" target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:opacity-80 transition-opacity">
-                <img src={signalLogo} alt="Signal" className="w-8 h-8" />
+              <a 
+                href="/schedule/private-lesson" 
+                className="inline-flex items-center text-primary hover:underline font-medium"
+              >
+                schedule a private lesson →
               </a>
             </CardContent>
           </Card>
@@ -30,8 +33,17 @@ export const TennisCoachingSection = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <a href="/strength-conditioning" className="inline-flex items-center text-primary hover:underline">
-                view programs →
+              <a 
+                href="/schedule/strength-conditioning" 
+                className="inline-flex items-center text-primary hover:underline font-medium mr-4"
+              >
+                schedule S&C session →
+              </a>
+              <a 
+                href="/strength-conditioning" 
+                className="inline-flex items-center text-muted-foreground hover:text-primary hover:underline"
+              >
+                view training pillars
               </a>
             </CardContent>
           </Card>
