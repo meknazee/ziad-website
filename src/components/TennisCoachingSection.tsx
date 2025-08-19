@@ -13,15 +13,17 @@ export const TennisCoachingSection = () => {
             <CardHeader>
               <CardTitle className="text-xl group-hover:text-primary transition-colors">private lessons</CardTitle>
               <CardDescription>
-                get in touch via signal for tennis coaching sessions
+                schedule a private tennis lesson here
               </CardDescription>
             </CardHeader>
             <CardContent>
               <a 
-                href="/schedule/private-lesson" 
+                href="https://calendar.app.google/KJjySDZgFa6hVBiv7" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center text-primary hover:underline font-medium"
               >
-                schedule a private lesson →
+                book now →
               </a>
             </CardContent>
           </Card>
