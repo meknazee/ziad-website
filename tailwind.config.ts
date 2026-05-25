@@ -65,8 +65,12 @@ export default {
 				}
 			},
 			fontFamily: {
-				'display': ['Playfair Display', 'serif'],
+				'display': ['Fraunces', 'Georgia', 'serif'],
 				'sans': ['Inter', 'system-ui', 'sans-serif'],
+			},
+			boxShadow: {
+				'court': '0 30px 80px -30px hsl(var(--court) / 0.45)',
+				'soft': '0 10px 40px -20px hsl(var(--foreground) / 0.25)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
