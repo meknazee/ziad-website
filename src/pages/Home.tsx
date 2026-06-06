@@ -27,11 +27,11 @@ const Home = () => {
             </span>
             <h1 className="mt-6 font-display text-5xl md:text-7xl leading-[0.95]">
               Hello, I'm <span className="italic text-accent">Coach Z</span>.<br />
-              [your headline].
+              Passion meets <em className="text-accent not-italic">elite</em> experience.
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
-              [Short intro — 2 sentences about who you coach and what makes your approach different.
-              DC, Arlington, and Northern Virginia.]
+              Pass Academy coach, former Rollins College standout, and Moroccan junior champion —
+              now coaching juniors and adults at Tuckahoe Recreation Club and across the DC–Virginia area.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
@@ -93,7 +93,7 @@ const Home = () => {
             />
           </div>
           <div className="absolute -bottom-6 -left-6 bg-card border border-border rounded-lg px-5 py-4 shadow-soft hidden md:block">
-            <div className="text-3xl font-display">[N]+</div>
+            <div className="text-3xl font-display">10+</div>
             <div className="text-xs text-muted-foreground">years coaching</div>
           </div>
         </div>

@@ -4,12 +4,13 @@ import { Layout } from "@/components/Layout";
 import portrait from "@/assets/coach-portrait.jpg";
 
 const credentials = [
-  "{credential 1}",
-  "{credential 2}",
-  "{credential 3}",
-  "{credential 4}",
-  "{credential 5}",
-  "{credential 6}",
+  "NCAA Singles ranking — No. 21",
+  "NCAA Doubles ranking — No. 9",
+  "Rollins College Men's Tennis (2016–)",
+  "ITF Junior Circuit experience",
+  "Pro tour experience prior to college",
+  "Top Moroccan national junior ranking",
+  "Pass Academy coach — Tuckahoe Recreation Club program lead",
 ];
 
 const About = () => {
@@ -23,12 +24,18 @@ const About = () => {
               Hello, I'm <span className="italic text-accent">Coach Z</span>.
             </h1>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              [Your story — paragraph one. Where you started, what hooked you on tennis, and the
-              moments that shaped how you coach today.]
+              Ziad grew up playing in Morocco, where he climbed the national and international junior
+              rankings before being recruited to play for the Rollins College Men's Tennis program in
+              the Spring of 2016. Along the way he competed on the ITF Junior Circuit and gained pro
+              tour experience that shaped how he sees the game today.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              [Your story — paragraph two. Playing background, coaching journey, and the kinds of
-              players you love working with most.]
+              As a former top college player who achieved NCAA national rankings in both singles
+              (No. 21) and doubles (No. 9), Coach Z understands the commitment, work ethic, and
+              mental fortitude required to excel in tennis. He's one of the most passionate coaches
+              at Pass Academy — his energy on court is contagious — and he currently leads the
+              Academy's program at Tuckahoe Recreation Club, encouraging the next generation of
+              players to chase their own dreams in the sport.
             </p>
           </div>
           <div className="relative">
