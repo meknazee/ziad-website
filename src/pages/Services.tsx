@@ -52,10 +52,8 @@ const includes = [
 ];
 
 const locations = [
-  { name: "[Court / club name]", area: "Washington DC" },
-  { name: "[Court / club name]", area: "Arlington" },
-  { name: "[Court / club name]", area: "Northern Virginia" },
-  { name: "Your home court", area: "By arrangement" },
+  { name: "Tuckahoe Recreation Club (Pass Academy)", area: "Arlington, VA" },
+  { name: "Additional DC–Virginia courts", area: "By arrangement" },
 ];
 
 const Services = () => {

@@ -7,7 +7,7 @@ export const SiteFooter = () => {
         <div>
           <div className="font-display text-lg">Coach Z Tennis</div>
           <p className="text-sm text-muted-foreground mt-2 max-w-xs">
-            Private tennis coaching and strength &amp; conditioning in the DC–Virginia area. Helping juniors and adults play with clarity and confidence.
+            Pass Academy coach Ziad — private tennis and junior development at Tuckahoe Recreation Club, serving the DC–Virginia area.
           </p>
         </div>
         <div className="text-sm">
