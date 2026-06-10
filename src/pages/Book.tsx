@@ -1,8 +1,7 @@
-// TODO: replace SQUARE_BOOKING_URL with the real Square Appointments link.
-const SQUARE_BOOKING_URL = "https://book.squareup.com/REPLACE_ME";
-
+import { Link } from "react-router-dom";
+import { ArrowRight, Clock, MapPin, Mail } from "lucide-react";
 import { Layout } from "@/components/Layout";
-import { ArrowRight, Mail, Zap, MapPin } from "lucide-react";
+import { MEETING_TYPES, CONTACT_EMAIL } from "@/lib/booking-config";
 
 const Book = () => {
   return (
@@ -13,91 +12,68 @@ const Book = () => {
           Let's get you <em className="text-accent not-italic">on court</em>.
         </h1>
         <p className="mt-6 text-lg text-muted-foreground max-w-xl">
-          Pick a time that works through Square Appointments. Availability is updated live —
-          if it's open, it's bookable.
+          Pick a session type to see Coach Z's open times at Tuckahoe Recreation Club.
+          The first 30 minutes are on me — book the intro session if it's your first time.
         </p>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 pb-24 grid gap-12 lg:grid-cols-[1.4fr_1fr]">
-        <div className="rounded-2xl border border-border bg-card p-8 md:p-12 shadow-soft flex flex-col items-start">
-          <h2 className="font-display text-3xl md:text-4xl leading-tight">
-            Schedule on Square Appointments.
-          </h2>
-          <p className="mt-4 text-muted-foreground max-w-md">
-            Private lessons, semi-private, junior development, and strength &amp; conditioning are
-            all bookable from the same page.
-          </p>
-          <a
-            href={SQUARE_BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-4 text-background font-medium hover:bg-foreground/90 transition group text-base"
+      <section className="mx-auto max-w-6xl px-6 pb-12 grid gap-4 md:gap-5">
+        {MEETING_TYPES.map((mt) => (
+          <Link
+            key={mt.slug}
+            to={`/book/${mt.slug}`}
+            className={`group flex flex-col md:flex-row md:items-center justify-between gap-4 rounded-2xl border bg-card p-6 md:p-7 transition hover:-translate-y-0.5 hover:border-accent/50 ${
+              mt.featured ? "border-accent/50 shadow-soft" : "border-border"
+            }`}
           >
-            Open booking page
-            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
-          </a>
-          <p className="mt-6 text-xs text-muted-foreground">
-            Opens in a new tab. You'll pick a service, time, and pay through Square.
-          </p>
-        </div>
+            <div className="flex-1">
+              <div className="flex items-center gap-3">
+                <h3 className="font-display text-2xl">{mt.title}</h3>
+                {mt.featured && (
+                  <span className="rounded-full bg-accent px-3 py-0.5 text-xs font-medium text-accent-foreground">
+                    Start here
+                  </span>
+                )}
+              </div>
+              <p className="mt-2 text-muted-foreground max-w-2xl">{mt.description}</p>
+              <div className="mt-4 flex flex-wrap items-center gap-5 text-sm text-muted-foreground">
+                <span className="inline-flex items-center gap-1.5">
+                  <Clock className="h-4 w-4" />
+                  {mt.duration_minutes} min
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <MapPin className="h-4 w-4" />
+                  {mt.location}
+                </span>
+              </div>
+            </div>
+            <div className="inline-flex items-center gap-2 text-sm font-medium text-foreground group-hover:gap-3 transition-all">
+              Pick a time
+              <ArrowRight className="h-4 w-4" />
+            </div>
+          </Link>
+        ))}
+      </section>
 
-        <aside className="space-y-6">
+      <section className="mx-auto max-w-6xl px-6 pb-24">
+        <div className="rounded-2xl border border-border bg-secondary/40 p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-4 md:justify-between">
           <div>
-            <h3 className="font-display text-2xl">Prefer to reach out directly?</h3>
-            <p className="mt-2 text-muted-foreground text-sm">
-              Email is fastest. Nostr works too.
+            <h2 className="font-display text-xl">Prefer to reach out directly?</h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Email is the fastest way. I'll respond within 24 hours.
             </p>
           </div>
-          <ul className="space-y-4">
-            <ContactItem
-              icon={<Mail className="h-4 w-4" />}
-              label="Email"
-              value="coach.z@example.com"
-              href="mailto:coach.z@example.com"
-            />
-            <ContactItem
-              icon={<Zap className="h-4 w-4" />}
-              label="Nostr"
-              value="[your npub / handle]"
-              href="#nostr-placeholder"
-            />
-            <ContactItem
-              icon={<MapPin className="h-4 w-4" />}
-              label="Service area"
-              value="DC · Arlington · NoVA"
-            />
-          </ul>
-          <div className="rounded-xl border border-border bg-secondary/40 p-5 text-sm">
-            <div className="font-medium">Response time</div>
-            <p className="text-muted-foreground mt-1">Within 24 hours, every time. Usually much faster.</p>
-          </div>
-        </aside>
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-background hover:bg-foreground/90 transition"
+          >
+            <Mail className="h-4 w-4" />
+            {CONTACT_EMAIL}
+          </a>
+        </div>
       </section>
     </Layout>
   );
-};
-
-const ContactItem = ({
-  icon,
-  label,
-  value,
-  href,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-  href?: string;
-}) => {
-  const content = (
-    <div className="flex items-start gap-3 rounded-lg border border-border bg-card p-4 hover:border-accent/40 transition">
-      <div className="mt-0.5 text-accent">{icon}</div>
-      <div>
-        <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
-        <div className="mt-0.5 font-medium">{value}</div>
-      </div>
-    </div>
-  );
-  return <li>{href ? <a href={href}>{content}</a> : content}</li>;
 };
 
 export default Book;

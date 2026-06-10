@@ -15,15 +15,14 @@ export const SiteFooter = () => {
           <ul className="space-y-2 text-muted-foreground">
             <li><Link to="/about" className="hover:text-foreground">About</Link></li>
             <li><Link to="/services" className="hover:text-foreground">Services</Link></li>
-            <li><Link to="/strength-conditioning" className="hover:text-foreground">Strength &amp; Conditioning</Link></li>
+            <li><Link to="/working-athlete" className="hover:text-foreground">The Library</Link></li>
             <li><Link to="/book" className="hover:text-foreground">Book a session</Link></li>
           </ul>
         </div>
         <div className="text-sm">
           <div className="font-medium mb-3">Contact</div>
           <ul className="space-y-2 text-muted-foreground">
-            <li><a href="mailto:coach.z@example.com" className="hover:text-foreground">coach.z@example.com</a></li>
-            <li><a href="#nostr-placeholder" className="hover:text-foreground">Nostr</a></li>
+            <li><a href="mailto:contactme@coachziad.com" className="hover:text-foreground">contactme@coachziad.com</a></li>
             <li>Washington DC · Arlington · Northern Virginia</li>
           </ul>
         </div>
