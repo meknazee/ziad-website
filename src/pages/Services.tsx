@@ -37,8 +37,8 @@ const tiers = [
     unit: "/ session",
     blurb: "Build the engine that powers your tennis.",
     features: ["SES framework", "Strength, endurance & skills", "Off-court training plan", "Injury-resilient body"],
-    href: "/strength-conditioning",
-    cta: "View training pillars",
+    href: "/working-athlete",
+    cta: "Explore the Library",
   },
 ];
 
