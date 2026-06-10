@@ -14,7 +14,84 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      bookings: {
+        Row: {
+          client_email: string
+          client_id: string
+          client_name: string
+          client_notes: string
+          created_at: string
+          duration_minutes: number
+          ends_at: string
+          google_event_id: string | null
+          google_meet_url: string | null
+          id: string
+          location: string
+          meeting_type_slug: string
+          meeting_type_title: string
+          starts_at: string
+          status: string
+        }
+        Insert: {
+          client_email?: string
+          client_id: string
+          client_name?: string
+          client_notes?: string
+          created_at?: string
+          duration_minutes: number
+          ends_at: string
+          google_event_id?: string | null
+          google_meet_url?: string | null
+          id?: string
+          location?: string
+          meeting_type_slug: string
+          meeting_type_title: string
+          starts_at: string
+          status?: string
+        }
+        Update: {
+          client_email?: string
+          client_id?: string
+          client_name?: string
+          client_notes?: string
+          created_at?: string
+          duration_minutes?: number
+          ends_at?: string
+          google_event_id?: string | null
+          google_meet_url?: string | null
+          id?: string
+          location?: string
+          meeting_type_slug?: string
+          meeting_type_title?: string
+          starts_at?: string
+          status?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string
+          email: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string
+          email?: string | null
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string
+          email?: string | null
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
