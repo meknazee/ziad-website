@@ -1,7 +1,7 @@
 import { Mail, MapPin, ArrowRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 
-const CALENDLY_URL = "https://calendar.com/coach-ziad";
+const CALENDLY_URL = "https://calendly.com/coach-ziad";
 
 const details = [
   {
