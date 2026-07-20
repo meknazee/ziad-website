@@ -34,7 +34,7 @@ export const SiteHeader = () => {
             </NavLink>
           ))}
           <a
-            href="https://calendar.com/coach-ziad"
+            href="https://calendly.com/coach-ziad"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-foreground px-5 py-2 text-background hover:bg-foreground/90 transition"
