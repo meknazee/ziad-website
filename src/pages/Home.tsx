@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Award, Clock } from "lucide-react";
-
+import { Layout } from "@/components/Layout";
 import portrait from "@/assets/coach-ziad-portrait.jpg.asset.json";
 
-
 const CALENDLY_URL = "https://calendar.com/coach-ziad";
+
 
 const Home = () => {
   return (
