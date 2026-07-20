@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Award, Clock } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import hero from "@/assets/hero-court.jpg";
-import portrait from "@/assets/coach-ziad-photo.png";
+import portrait from "@/assets/coach-ziad-portrait.jpg.asset.json";
 
-const CALENDLY_URL = "https://calendly.com/coach.ziad";
+const CALENDLY_URL = "https://calendar.com/coach-ziad";
 
 const Home = () => {
   return (
