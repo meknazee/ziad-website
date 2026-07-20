@@ -1,114 +1,81 @@
-import { Link } from "react-router-dom";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
-import portrait from "@/assets/coach-portrait.jpg";
+import portrait from "@/assets/coach-ziad-photo.png";
 
-const credentials = [
-  "NCAA Singles ranking — No. 21",
-  "NCAA Doubles ranking — No. 9",
-  "Rollins College Men's Tennis (2016–)",
-  "ITF Junior Circuit experience",
-  "Pro tour experience prior to college",
-  "Top Moroccan national junior ranking",
-  "Pass Academy coach — Tuckahoe Recreation Club program lead",
+const CALENDLY_URL = "https://calendly.com/coach.ziad";
+
+const offerings = [
+  "Private & semi-private lessons",
+  "Junior development programs",
+  "Match play & tournament prep",
+  "Video stroke analysis",
 ];
 
 const About = () => {
   return (
     <Layout>
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-16">
-        <div className="grid gap-14 md:grid-cols-[1.1fr_1fr] items-center">
+        <div className="grid gap-14 md:grid-cols-[1.1fr_0.9fr] items-center">
           <div>
-            <span className="text-xs uppercase tracking-[0.2em] text-accent">About</span>
+            <span className="text-xs uppercase tracking-[0.3em] text-accent font-semibold">
+              About Me
+            </span>
             <h1 className="mt-4 font-display text-5xl md:text-6xl leading-[1]">
-              Hello, I'm <span className="italic text-accent">Coach Z</span>.
+              Coach <span className="italic text-accent">Ziad</span>
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Ziad grew up playing in Morocco, where he climbed the national and international junior
-              rankings before being recruited to play for the Rollins College Men's Tennis program in
-              the Spring of 2016. Along the way he competed on the ITF Junior Circuit and gained pro
-              tour experience that shaped how he sees the game today.
-            </p>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              As a former top college player who achieved NCAA national rankings in both singles
-              (No. 21) and doubles (No. 9), Coach Z understands the commitment, work ethic, and
-              mental fortitude required to excel in tennis. He's one of the most passionate coaches
-              at Pass Academy — his energy on court is contagious — and he currently leads the
-              Academy's program at Tuckahoe Recreation Club, encouraging the next generation of
-              players to chase their own dreams in the sport.
-            </p>
+            <div className="mt-6 space-y-4 text-lg text-muted-foreground leading-relaxed max-w-xl">
+              <p>
+                Ziad is a passionate coach who works as a Head Tennis Pro at Tuckahoe Recreation
+                Club in McLean, VA. His love for the game is unmatched, and his energy on the court
+                is highly contagious. With his distinguished collegiate and humble professional
+                tennis career, Ziad brings elite-level expertise and passion to the court.
+              </p>
+              <p>
+                Footwork, technique, match strategy, and the mental side of the game — we work on
+                all of it, at a pace that keeps tennis fun.
+              </p>
+            </div>
+
+            <ul className="mt-8 max-w-md space-y-3">
+              {offerings.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-center gap-3 border-b border-border pb-3"
+                >
+                  <span className="h-2 w-2 rounded-full bg-accent" />
+                  <span className="font-medium">{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-10">
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-background font-medium hover:bg-foreground/90 transition group"
+              >
+                Book a Session
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
+              </a>
+            </div>
           </div>
+
           <div className="relative">
             <div className="aspect-[4/5] overflow-hidden rounded-lg shadow-court">
               <img
                 src={portrait}
-                alt="Coach Z portrait"
-                className="h-full w-full object-cover"
-                loading="lazy"
-                width={1024}
-                height={1280}
+                alt="Coach Ziad on the tennis court"
+                className="h-full w-full object-cover object-[50%_30%]"
+                width={900}
+                height={1200}
               />
             </div>
           </div>
         </div>
       </section>
-
-      <section className="bg-secondary/40 border-y border-border">
-        <div className="mx-auto max-w-6xl px-6 py-20 grid gap-12 md:grid-cols-3">
-          <div className="md:col-span-1">
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Coaching philosophy</span>
-            <h2 className="mt-4 font-display text-4xl leading-tight">Three things I believe.</h2>
-          </div>
-          <div className="md:col-span-2 grid gap-8">
-            <Belief n="01" title="Technique serves the player, not the other way around.">
-              We build strokes that fit your body, your goals, and the level you actually play at —
-              not a textbook ideal.
-            </Belief>
-            <Belief n="02" title="Match-play is a skill of its own.">
-              Hitting big in practice is easy. Closing out a 4-4 set isn't. We train both — and we
-              talk about the second one a lot.
-            </Belief>
-            <Belief n="03" title="Progress should be visible.">
-              Every six weeks we check in on what's improved, what's stuck, and what's next.
-              No vague vibes — just clear, honest feedback.
-            </Belief>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Credentials</span>
-        <h2 className="mt-4 font-display text-4xl">The paperwork.</h2>
-        <ul className="mt-10 grid gap-4 sm:grid-cols-2">
-          {credentials.map((c) => (
-            <li key={c} className="flex items-start gap-3 rounded-lg border border-border bg-card px-5 py-4">
-              <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-              <span className="text-sm">{c}</span>
-            </li>
-          ))}
-        </ul>
-        <div className="mt-12">
-          <Link
-            to="/book"
-            className="inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-background font-medium hover:bg-foreground/90 transition group"
-          >
-            Book a session
-            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
-          </Link>
-        </div>
-      </section>
     </Layout>
   );
 };
-
-const Belief = ({ n, title, children }: { n: string; title: string; children: React.ReactNode }) => (
-  <div className="flex gap-5">
-    <div className="font-display text-2xl text-accent shrink-0 w-10">{n}</div>
-    <div>
-      <h3 className="font-display text-xl">{title}</h3>
-      <p className="mt-2 text-muted-foreground leading-relaxed">{children}</p>
-    </div>
-  </div>
-);
 
 export default About;
