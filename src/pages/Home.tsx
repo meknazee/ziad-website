@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Layout } from "@/components/Layout";
+import { ArrowRight, MapPin, Award, Clock } from "lucide-react";
+
 import portrait from "@/assets/coach-ziad-portrait.jpg.asset.json";
 
 
