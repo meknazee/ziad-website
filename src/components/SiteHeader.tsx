@@ -5,9 +5,9 @@ import { Menu, X } from "lucide-react";
 const links = [
   { to: "/", label: "Home", end: true },
   { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
   { to: "/services", label: "Services" },
   { to: "/working-athlete", label: "Library" },
-  { to: "/book", label: "Book" },
 ];
 
 export const SiteHeader = () => {
@@ -33,12 +33,14 @@ export const SiteHeader = () => {
               {l.label}
             </NavLink>
           ))}
-          <Link
-            to="/book"
+          <a
+            href="https://calendly.com/coach.ziad"
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-foreground px-5 py-2 text-background hover:bg-foreground/90 transition"
           >
             Book a Session
-          </Link>
+          </a>
         </nav>
         <button
           className="md:hidden p-3 -mr-2"

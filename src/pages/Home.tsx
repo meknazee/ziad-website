@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Award, Clock } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import hero from "@/assets/hero-court.jpg";
-import court from "@/assets/court-detail.jpg";
+import portrait from "@/assets/coach-ziad-photo.png";
+
+const CALENDLY_URL = "https://calendly.com/coach.ziad";
 
 const Home = () => {
   return (
@@ -12,7 +14,7 @@ const Home = () => {
         <div className="absolute inset-0">
           <img
             src={hero}
-            alt="Tennis coach mid-stroke on a clay court"
+            alt="Tennis court"
             className="h-full w-full object-cover"
             width={1600}
             height={1200}
@@ -20,33 +22,61 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/20" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         </div>
-        <div className="relative mx-auto max-w-6xl px-6 py-28 md:py-40">
-          <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-accent font-medium">
+        <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32 grid gap-12 md:grid-cols-[1.1fr_0.9fr] items-center">
+          <div>
+            <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-accent font-semibold">
               <span className="h-px w-8 bg-accent" /> Private Tennis Coaching
             </span>
             <h1 className="mt-6 font-display text-5xl md:text-7xl leading-[0.95]">
-              Hello, I'm <span className="italic text-accent">Coach Z</span>.<br />
-              Passion meets <em className="text-accent not-italic">elite</em> experience.
+              Sharper game.<br />
+              <span className="italic text-accent">Every shot.</span>
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
-              Pass Academy coach, former Rollins College standout, and Moroccan junior champion —
-              now coaching juniors and adults at Tuckahoe Recreation Club and across the DC–Virginia area.
+              One-on-one and group lessons built around your level, your goals, and your rhythm.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link
-                to="/book"
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-background font-medium hover:bg-foreground/90 transition group"
               >
                 Book a Session
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
-              </Link>
+              </a>
               <Link
-                to="/services"
+                to="/about"
                 className="text-sm font-medium underline underline-offset-4 decoration-accent/40 hover:decoration-accent"
               >
-                See sessions &amp; pricing
+                About me
               </Link>
+            </div>
+
+            <div className="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-foreground/15 pt-8">
+              {[
+                { n: "15+", l: "Years coaching" },
+                { n: "200+", l: "Players trained" },
+                { n: "All", l: "Levels welcome" },
+              ].map((s) => (
+                <div key={s.l}>
+                  <div className="font-display text-4xl">{s.n}</div>
+                  <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
+                    {s.l}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative hidden md:block">
+            <div className="aspect-[4/5] overflow-hidden rounded-lg shadow-court">
+              <img
+                src={portrait}
+                alt="Coach Ziad on the tennis court"
+                className="h-full w-full object-cover object-[50%_30%]"
+                width={900}
+                height={1200}
+              />
             </div>
           </div>
         </div>
@@ -61,61 +91,25 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Approach */}
-      <section className="mx-auto max-w-6xl px-6 py-24 grid gap-16 md:grid-cols-2 items-center">
-        <div>
-          <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">The approach</span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl leading-tight">
-            Less drilling.<br />
-            More <em className="text-accent not-italic">deliberate</em> play.
-          </h2>
-          <p className="mt-6 text-muted-foreground leading-relaxed">
-            Every session is built around what you actually need on Saturday morning — whether that's a
-            reliable second serve, a calmer return, or finally winning the close ones. We video, we
-            measure, and we build habits that stick.
-          </p>
-          <Link
-            to="/about"
-            className="mt-8 inline-flex items-center gap-2 text-sm font-medium hover:gap-3 transition-all"
-          >
-            Read my story <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-        <div className="relative">
-          <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-court">
-            <img
-              src={court}
-              alt="Overhead view of a tennis court"
-              className="h-full w-full object-cover"
-              loading="lazy"
-              width={1400}
-              height={900}
-            />
-          </div>
-          <div className="absolute -bottom-6 -left-6 bg-card border border-border rounded-lg px-5 py-4 shadow-soft hidden md:block">
-            <div className="text-3xl font-display">10+</div>
-            <div className="text-xs text-muted-foreground">years coaching</div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA strip */}
-      <section className="mx-auto max-w-6xl px-6">
+      <section className="mx-auto max-w-6xl px-6 py-20">
         <div className="rounded-2xl bg-foreground text-background px-8 md:px-14 py-14 md:py-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
           <div>
             <h2 className="font-display text-3xl md:text-5xl leading-tight max-w-xl">
-              First session is on me.
+              Ready to hit?
             </h2>
             <p className="mt-4 text-background/70 max-w-md">
-              30 minutes on court. We hit, we talk goals, and you decide if it's a fit. Zero pressure.
+              Pick a time on my calendar — I'll confirm your slot within a day.
             </p>
           </div>
-          <Link
-            to="/book"
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-accent-foreground font-medium hover:opacity-90 transition shrink-0"
           >
-            Book free intro <ArrowRight className="h-4 w-4" />
-          </Link>
+            Book a Session <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </section>
     </Layout>

@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "@/hooks/useAuth";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 import WorkingAthlete from "./pages/WorkingAthlete";
 import Book from "./pages/Book";
@@ -26,6 +27,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/services" element={<Services />} />
             <Route path="/working-athlete" element={<WorkingAthlete />} />
             {/* Redirect the old route so existing links don't 404 */}
