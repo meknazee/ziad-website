@@ -13,17 +13,17 @@ const Home = () => {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={hero}
-            alt="Tennis court"
-            className="h-full w-full object-cover"
+            src={portrait.url}
+            alt="Coach Ziad on the tennis court"
+            className="h-full w-full object-cover object-center"
             width={1600}
             height={1200}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/20" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         </div>
-        <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32 grid gap-12 md:grid-cols-[1.1fr_0.9fr] items-center">
-          <div>
+        <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-accent font-semibold">
               <span className="h-px w-8 bg-accent" /> Private Tennis Coaching
             </span>
@@ -67,20 +67,9 @@ const Home = () => {
               ))}
             </div>
           </div>
-
-          <div className="relative hidden md:block">
-            <div className="aspect-[4/5] overflow-hidden rounded-lg shadow-court">
-              <img
-                src={portrait.url}
-                alt="Coach Ziad on the tennis court"
-                className="h-full w-full object-cover object-center"
-                width={900}
-                height={1200}
-              />
-            </div>
-          </div>
         </div>
       </section>
+
 
       {/* Quick facts */}
       <section className="border-y border-border bg-secondary/40">
