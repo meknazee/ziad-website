@@ -64,9 +64,9 @@ const About = () => {
           <div className="relative">
             <div className="aspect-[4/5] overflow-hidden rounded-lg shadow-court">
               <img
-                src={portrait}
+                src={portrait.url}
                 alt="Coach Ziad on the tennis court"
-                className="h-full w-full object-cover object-[50%_30%]"
+                className="h-full w-full object-cover object-center"
                 width={900}
                 height={1200}
               />
