@@ -1,8 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
-import portrait from "@/assets/coach-ziad-photo.png";
+import portrait from "@/assets/coach-ziad-portrait.jpg.asset.json";
 
-const CALENDLY_URL = "https://calendly.com/coach.ziad";
+const CALENDLY_URL = "https://calendar.com/coach-ziad";
 
 const offerings = [
   "Private & semi-private lessons",
@@ -64,9 +64,9 @@ const About = () => {
           <div className="relative">
             <div className="aspect-[4/5] overflow-hidden rounded-lg shadow-court">
               <img
-                src={portrait}
+                src={portrait.url}
                 alt="Coach Ziad on the tennis court"
-                className="h-full w-full object-cover object-[50%_30%]"
+                className="h-full w-full object-cover object-center"
                 width={900}
                 height={1200}
               />

@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Award, Clock } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import hero from "@/assets/hero-court.jpg";
-import portrait from "@/assets/coach-ziad-photo.png";
+import portrait from "@/assets/coach-ziad-portrait.jpg.asset.json";
 
-const CALENDLY_URL = "https://calendly.com/coach.ziad";
+const CALENDLY_URL = "https://calendar.com/coach-ziad";
 
 const Home = () => {
   return (
@@ -71,9 +71,9 @@ const Home = () => {
           <div className="relative hidden md:block">
             <div className="aspect-[4/5] overflow-hidden rounded-lg shadow-court">
               <img
-                src={portrait}
+                src={portrait.url}
                 alt="Coach Ziad on the tennis court"
-                className="h-full w-full object-cover object-[50%_30%]"
+                className="h-full w-full object-cover object-center"
                 width={900}
                 height={1200}
               />
