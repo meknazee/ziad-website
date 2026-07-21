@@ -23,7 +23,7 @@ export const SiteFooter = () => {
           <div className="font-medium mb-3">Contact</div>
           <ul className="space-y-2 text-muted-foreground">
             <li><a href="mailto:contactme@coachziad.com" className="hover:text-foreground">contactme@coachziad.com</a></li>
-            <li>Washington DC · Arlington · Northern Virginia</li>
+            
           </ul>
         </div>
       </div>
