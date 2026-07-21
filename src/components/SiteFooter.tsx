@@ -28,13 +28,8 @@ export const SiteFooter = () => {
         </div>
       </div>
       <div className="border-t border-border/60">
-        <div className="mx-auto max-w-6xl px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-muted-foreground">
-          <div className="flex items-center gap-4">
-            <span className="uppercase tracking-wider">Other projects</span>
-            <a href="/bitcoin-resources" className="hover:text-foreground">bitcoin resources</a>
-            <a href="/podcast" className="hover:text-foreground">podcast &amp; blog</a>
-          </div>
-          <div>© {new Date().getFullYear()} Coach Z. All rights reserved.</div>
+        <div className="mx-auto max-w-6xl px-6 py-5 text-xs text-muted-foreground">
+          © {new Date().getFullYear()} Coach Z. All rights reserved.
         </div>
       </div>
     </footer>
