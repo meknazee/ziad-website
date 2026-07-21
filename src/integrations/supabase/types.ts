@@ -68,6 +68,42 @@ export type Database = {
         }
         Relationships: []
       }
+      inquiries: {
+        Row: {
+          created_at: string
+          email: string
+          goals: string | null
+          id: string
+          message: string
+          name: string
+          phone: string | null
+          player_level: string | null
+          status: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          goals?: string | null
+          id?: string
+          message: string
+          name: string
+          phone?: string | null
+          player_level?: string | null
+          status?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          goals?: string | null
+          id?: string
+          message?: string
+          name?: string
+          phone?: string | null
+          player_level?: string | null
+          status?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string

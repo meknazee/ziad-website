@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
@@ -12,6 +12,13 @@ const links = [
 
 export const SiteHeader = () => {
   const [open, setOpen] = useState(false);
+  const [emphasize, setEmphasize] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setEmphasize(window.scrollY > 300);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
@@ -37,7 +44,11 @@ export const SiteHeader = () => {
             href="https://calendly.com/coach-ziad"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-foreground px-5 py-2 text-background hover:bg-foreground/90 transition"
+            className={`rounded-full px-5 py-2 transition-all duration-300 ${
+              emphasize
+                ? "bg-accent text-accent-foreground shadow-md scale-105"
+                : "bg-foreground text-background hover:bg-foreground/90"
+            }`}
           >
             Book a Session
           </a>
