@@ -5,9 +5,9 @@ export const SiteFooter = () => {
     <footer className="border-t border-border bg-secondary/30 mt-24">
       <div className="mx-auto max-w-6xl px-6 py-12 grid gap-8 md:grid-cols-3">
         <div>
-          <div className="font-display text-lg">Coach Z Tennis</div>
+          <div className="font-display text-lg">coach ziad&nbsp;</div>
           <p className="text-sm text-muted-foreground mt-2 max-w-xs">
-            Pass Academy coach Ziad — private tennis and junior development at Tuckahoe Recreation Club, serving the DC–Virginia area.
+            {"\n"}
           </p>
         </div>
         <div className="text-sm">
