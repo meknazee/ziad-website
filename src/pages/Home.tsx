@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, Award, Clock, Users, Trophy, CalendarDays } from "lucide-react";
+import { ArrowRight, Users, Trophy, CalendarDays } from "lucide-react";
 
 import { Layout } from "@/components/Layout";
 import portrait from "@/assets/coach-ziad-portrait.jpg.asset.json";
@@ -75,14 +75,6 @@ const Home = () => {
       </section>
 
 
-      {/* Quick facts */}
-      <section className="border-y border-border bg-secondary/40">
-        <div className="mx-auto max-w-6xl px-6 py-10 grid gap-8 md:grid-cols-3 text-sm">
-          <Fact icon={<MapPin className="h-4 w-4" />} title="Where" text="DC, Arlington and NoVA courts" />
-          <Fact icon={<Award className="h-4 w-4" />} title="Who" text="Juniors & adults, all levels" />
-          <Fact icon={<Clock className="h-4 w-4" />} title="When" text="Mornings, evenings & weekends" />
-        </div>
-      </section>
 
       {/* CTA strip */}
       <section className="mx-auto max-w-6xl px-6 py-20">
@@ -108,15 +100,5 @@ const Home = () => {
     </Layout>
   );
 };
-
-const Fact = ({ icon, title, text }: { icon: React.ReactNode; title: string; text: string }) => (
-  <div className="flex items-start gap-3">
-    <div className="mt-0.5 text-accent">{icon}</div>
-    <div>
-      <div className="font-medium">{title}</div>
-      <div className="text-muted-foreground">{text}</div>
-    </div>
-  </div>
-);
 
 export default Home;
