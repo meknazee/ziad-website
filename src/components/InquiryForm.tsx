@@ -117,6 +117,31 @@ export const InquiryForm = () => {
       onSubmit={onSubmit}
       className="rounded-2xl border border-border bg-card p-6 md:p-8 space-y-5"
     >
+      {services.length > 0 && (
+        <div className="rounded-xl border border-accent/40 bg-accent/5 p-4">
+          <div className="text-xs uppercase tracking-widest text-accent font-semibold">
+            services you're interested in
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {services.map((slug) => (
+              <span
+                key={slug}
+                className="inline-flex items-center gap-1.5 rounded-full bg-background border border-border px-3 py-1 text-sm"
+              >
+                {SERVICE_LABELS[slug]}
+                <button
+                  type="button"
+                  onClick={() => removeService(slug)}
+                  aria-label={`remove ${SERVICE_LABELS[slug]}`}
+                  className="text-muted-foreground hover:text-foreground"
+                >
+                  <X className="h-3.5 w-3.5" />
+                </button>
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
       <div className="grid gap-5 md:grid-cols-2">
         <Field label="name">
           <input
