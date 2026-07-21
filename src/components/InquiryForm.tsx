@@ -1,8 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
-import { Loader2, Send } from "lucide-react";
+import { Loader2, Send, X } from "lucide-react";
+
+const SERVICE_LABELS: Record<string, string> = {
+  "private-1-1": "private 1:1",
+  "semi-private": "semi-private (2)",
+  "junior-development": "junior development",
+  "strength-conditioning": "strength & conditioning",
+};
 
 const schema = z.object({
   name: z.string().trim().min(1, "name is required").max(120),
@@ -28,6 +36,24 @@ export const InquiryForm = () => {
   const [values, setValues] = useState<FormState>(initial);
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
+  const [services, setServices] = useState<string[]>([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    const raw = searchParams.get("services");
+    if (!raw) return;
+    const slugs = raw.split(",").map((s) => s.trim()).filter((s) => SERVICE_LABELS[s]);
+    if (slugs.length) setServices(Array.from(new Set(slugs)));
+  }, [searchParams]);
+
+  const removeService = (slug: string) => {
+    const next = services.filter((s) => s !== slug);
+    setServices(next);
+    const params = new URLSearchParams(searchParams);
+    if (next.length) params.set("services", next.join(","));
+    else params.delete("services");
+    setSearchParams(params, { replace: true });
+  };
 
   const update = <K extends keyof FormState>(k: K, v: FormState[K]) =>
     setValues((s) => ({ ...s, [k]: v }));
@@ -44,13 +70,16 @@ export const InquiryForm = () => {
       return;
     }
     setSubmitting(true);
+    const servicesLine = services.length
+      ? `interested in: ${services.map((s) => SERVICE_LABELS[s]).join(", ")}\n\n`
+      : "";
     const { error } = await supabase.from("inquiries").insert({
       name: parsed.data.name,
       email: parsed.data.email,
       phone: parsed.data.phone || null,
       player_level: parsed.data.player_level || null,
       goals: parsed.data.goals || null,
-      message: parsed.data.message,
+      message: `${servicesLine}${parsed.data.message}`.slice(0, 2000),
     });
     setSubmitting(false);
     if (error) {
@@ -59,6 +88,7 @@ export const InquiryForm = () => {
     }
     setSent(true);
     setValues(initial);
+    setServices([]);
     toast({ title: "message sent", description: "coach z will get back to you shortly." });
   };
 
