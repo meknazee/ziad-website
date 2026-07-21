@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, Award, Clock } from "lucide-react";
+import { ArrowRight, MapPin, Award, Clock, Users, Trophy, CalendarDays } from "lucide-react";
+
 import { Layout } from "@/components/Layout";
 import portrait from "@/assets/coach-ziad-portrait.jpg.asset.json";
 
@@ -54,18 +55,21 @@ const Home = () => {
 
             <div className="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-foreground/15 pt-8">
               {[
-                { n: "15+", l: "Years coaching" },
-                { n: "200+", l: "Players trained" },
-                { n: "All", l: "Levels welcome" },
-              ].map((s) => (
-                <div key={s.l}>
-                  <div className="font-display text-4xl">{s.n}</div>
-                  <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
-                    {s.l}
+                { icon: Users, label: "Every Age" },
+                { icon: Trophy, label: "Every Level" },
+                { icon: CalendarDays, label: "All Year Long" },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="flex flex-col items-start gap-2">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent/15 text-accent">
+                    <Icon className="h-4 w-4" strokeWidth={2.25} />
+                  </span>
+                  <div className="text-xs uppercase tracking-widest font-medium">
+                    {label}
                   </div>
                 </div>
               ))}
             </div>
+
           </div>
         </div>
       </section>
