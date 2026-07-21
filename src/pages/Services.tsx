@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
-import { ArrowRight, Check, Plus } from "lucide-react";
-import { useMemo, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { ArrowRight, Check, CalendarCheck } from "lucide-react";
 import { Layout } from "@/components/Layout";
 
 const tiers = [
@@ -46,15 +45,11 @@ const locations = [
 ];
 
 const Services = () => {
-  const [selected, setSelected] = useState<string[]>([]);
+  const navigate = useNavigate();
 
-  const toggle = (slug: string) =>
-    setSelected((s) => (s.includes(slug) ? s.filter((x) => x !== slug) : [...s, slug]));
-
-  const inquiryHref = useMemo(
-    () => (selected.length ? `/contact?services=${selected.join(",")}` : "/contact"),
-    [selected]
-  );
+  const scheduleService = (slug: string) => {
+    navigate(`/contact?services=${slug}`);
+  };
 
   return (
     <Layout>
@@ -64,100 +59,57 @@ const Services = () => {
           sessions built around <em className="text-accent not-italic">your</em> game.
         </h1>
         <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
-          pick what fits — add anything you're curious about to your inquiry. i'll follow up
+          pick what fits — tap schedule on any card to start an inquiry. i'll follow up
           personally with pricing, availability, and a suggested starting point.
         </p>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {tiers.map((t) => {
-          const isSelected = selected.includes(t.slug);
-          return (
-            <div
-              key={t.name}
-              className={`relative flex flex-col rounded-2xl border p-7 transition hover:-translate-y-1 ${
-                t.featured ? "bg-foreground text-background border-foreground shadow-court" : "bg-card border-border"
-              }`}
-            >
-              {t.featured && (
-                <span className="absolute -top-3 left-7 rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
-                  most popular
-                </span>
-              )}
-              <h3 className="font-display text-2xl">{t.name.toLowerCase()}</h3>
-              <p className={`mt-2 text-sm ${t.featured ? "text-background/70" : "text-muted-foreground"}`}>
-                {t.blurb.toLowerCase()}
-              </p>
-              <ul className="mt-6 space-y-2.5 text-sm flex-1">
-                {t.features.map((f) => (
-                  <li key={f} className="flex gap-2">
-                    <Check className="h-4 w-4 shrink-0 mt-0.5 text-accent" />
-                    <span className={t.featured ? "text-background/85" : ""}>{f.toLowerCase()}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-6 relative group">
-                <button
-                  type="button"
-                  onClick={() => toggle(t.slug)}
-                  aria-pressed={isSelected}
-                  className={`w-full inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition ${
-                    isSelected
-                      ? "bg-accent text-accent-foreground"
-                      : t.featured
-                        ? "bg-background text-foreground hover:bg-background/90"
-                        : "bg-foreground text-background hover:bg-foreground/90"
-                  }`}
-                >
-                  {isSelected ? (
-                    <>
-                      <Check className="h-4 w-4" />
-                      added to inquiry
-                    </>
-                  ) : (
-                    <>
-                      <Plus className="h-4 w-4" />
-                      add to inquiry
-                    </>
-                  )}
-                </button>
-                {!isSelected && (
-                  <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-11 whitespace-nowrap rounded-md bg-foreground px-3 py-1.5 text-xs text-background opacity-0 group-hover:opacity-100 transition shadow-lg">
-                    add this service to your inquiry
-                    <span className="absolute left-1/2 -translate-x-1/2 -bottom-1 h-2 w-2 rotate-45 bg-foreground" />
-                  </div>
-                )}
-              </div>
-            </div>
-          );
-        })}
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 pb-6">
-        <div className="rounded-2xl border border-border bg-card p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div>
-            <div className="text-xs uppercase tracking-widest text-muted-foreground">
-              your inquiry
-            </div>
-            <div className="mt-1 font-medium">
-              {selected.length === 0
-                ? "no services selected yet — tap 'add to inquiry' on any card above."
-                : `${selected.length} service${selected.length > 1 ? "s" : ""} selected`}
-            </div>
-          </div>
-          <Link
-            to={inquiryHref}
-            className={`inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition group ${
-              selected.length
-                ? "bg-foreground text-background hover:bg-foreground/90"
-                : "bg-secondary text-foreground hover:bg-secondary/80"
+        {tiers.map((t) => (
+          <div
+            key={t.name}
+            className={`relative flex flex-col rounded-2xl border p-7 transition hover:-translate-y-1 ${
+              t.featured ? "bg-foreground text-background border-foreground shadow-court" : "bg-card border-border"
             }`}
           >
-            {selected.length ? "continue to inquiry" : "just get in touch"}
-            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
-          </Link>
-        </div>
+            {t.featured && (
+              <span className="absolute -top-3 left-7 rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
+                most popular
+              </span>
+            )}
+            <h3 className="font-display text-2xl">{t.name.toLowerCase()}</h3>
+            <p className={`mt-2 text-sm ${t.featured ? "text-background/70" : "text-muted-foreground"}`}>
+              {t.blurb.toLowerCase()}
+            </p>
+            <ul className="mt-6 space-y-2.5 text-sm flex-1">
+              {t.features.map((f) => (
+                <li key={f} className="flex gap-2">
+                  <Check className="h-4 w-4 shrink-0 mt-0.5 text-accent" />
+                  <span className={t.featured ? "text-background/85" : ""}>{f.toLowerCase()}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-6 relative group">
+              <button
+                type="button"
+                onClick={() => scheduleService(t.slug)}
+                className={`w-full inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition ${
+                  t.featured
+                    ? "bg-background text-foreground hover:bg-background/90"
+                    : "bg-foreground text-background hover:bg-foreground/90"
+                }`}
+              >
+                <CalendarCheck className="h-4 w-4" />
+                schedule a {t.name.toLowerCase()}
+              </button>
+              <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-11 whitespace-nowrap rounded-md bg-foreground px-3 py-1.5 text-xs text-background opacity-0 group-hover:opacity-100 transition shadow-lg">
+                start an inquiry for {t.name.toLowerCase()}
+                <span className="absolute left-1/2 -translate-x-1/2 -bottom-1 h-2 w-2 rotate-45 bg-foreground" />
+              </div>
+            </div>
+          </div>
+        ))}
       </section>
 
       <section className="bg-secondary/40 border-y border-border">
@@ -195,10 +147,10 @@ const Services = () => {
           the first 30 minutes are free. tell me about your game and i'll suggest a starting point.
         </p>
         <Link
-          to={inquiryHref}
+          to="/contact"
           className="mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-background font-medium hover:bg-foreground/90 transition group"
         >
-          {selected.length ? `send inquiry (${selected.length})` : "get in touch"}
+          get in touch
           <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
         </Link>
       </section>
