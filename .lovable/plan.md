@@ -1,49 +1,50 @@
+# home page revamp — 3-step funnel
 
-## security finding (context)
+Inspired by mitchellfranktennis.com, but in our own aesthetic (court green / clay orange / off-white, Fraunces + Inter, all lowercase).
 
-`profiles` currently has a SELECT policy allowing any authenticated user to read every row (email + display name). It affects any authenticated route — most relevantly `/book`, `/book/:slug`, `/book/success`, and `/auth` — since those are the only paths where users sign in. No page today lists other users' profiles, so tightening the policy is safe.
+## step 1 — video hook
 
-## this session
+- full-bleed looping background video in the hero (muted, autoplay, playsinline, loop), with the existing portrait as the poster/fallback image so nothing breaks before the clip loads or on reduced-motion.
+- keep the current gradient wash so the headline stays readable.
+- headline + short intro line stay, CTA row becomes: "book a session" (opens Calendly popup) and "find your program" (scrolls to step 2).
+- **needs from you:** the MP4 clip. Until you upload it, the hero keeps the current portrait and the video slots in with a one-line change.
 
-### 1. profiles RLS fix
-- migration: drop `Authenticated can read profiles`, add `Users can read own profile` (`auth.uid() = id`).
+## step 2 — which program is right for you?
 
-### 2. home page polish (keep current headline direction)
-- tighten hero subcopy; add subtle scroll cue.
-- add a short "what to expect" strip (3 items: private lessons, group clinics, junior development) linking into `/services`.
-- add a testimonial/quote block placeholder (single quote, easy to swap later).
-- keep portrait background + gradient.
+Two clearly separated tiers, not an academy ladder:
 
-### 3. dynamic booking CTA (both options)
-- header "Book a Session" button gets a subtle pulse + scale animation after user scrolls past the hero (IntersectionObserver on hero).
-- new `FloatingBookCta` component: fixed bottom-right pill, appears after 400px scroll on all public pages, hidden on `/book*` and `/auth`. Uses accent color, links to `https://calendly.com/coach-ziad`.
+**on-court sessions (bookable via Calendly)**
+- private lessons
+- doubles & live ball clinics
+- conditioning sessions
 
-### 4. inquiry form (replaces "email only" on Contact)
-Fields: name, email, phone (optional), player level (select: beginner/intermediate/advanced/junior), goals (textarea), message (textarea).
+Each card: short description + "schedule" button that opens the Calendly popup for that session type.
 
-- new table `inquiries` (name, email, phone, player_level, goals, message, status, created_at). RLS: anon+authenticated can INSERT; only service_role can SELECT (coach reads via email notification, not from the client).
-- new `InquiryForm` component with zod validation, added to `/contact` above the direct-email card.
-- edge function `send-inquiry-notification` invoked after insert; emails coach at `contactme@coachziad.com`.
-- email requires an email domain — trigger the email-setup dialog if none is configured, then scaffold transactional email + a `new-inquiry` template.
+**the working athlete program (athlete onboarding)**
+- junior
+- high performance
+- adult
 
-### 5. content memory
-- add core rule: "Booking CTA points to https://calendly.com/coach-ziad."
+Each card: short description + "apply" button that goes to the contact form with that track pre-filled as a chip (reusing the existing chip mechanism on the inquiry form).
 
-## deferred / not in scope
-- services page rewrite (next session per your note)
-- library / working-athlete changes
-- coach-side admin view for inquiries (submissions arrive by email for now)
+## step 3 — CTA + get in touch
+
+- a booking section with the Calendly widget embedded inline (full scheduling page, no new tab).
+- directly below it, the existing inquiry form moved/mirrored onto the home page so a visitor can finish the funnel without navigating away. `/contact` keeps its own copy.
+- footer gains Instagram and YouTube icons.
+
+## pinned for next session
+
+**Reminder: send me your Instagram and YouTube links.** They're placeholder buttons (non-clickable, marked "coming soon") until then — same for the hero video clip.
 
 ## technical details
 
-Files:
-- `supabase/migrations/<ts>_profiles_rls_and_inquiries.sql` — RLS tightening + `inquiries` table with GRANTs and RLS.
-- `supabase/functions/send-inquiry-notification/index.ts` — validates payload, calls `send-transactional-email`.
-- `supabase/functions/_shared/transactional-email-templates/new-inquiry.tsx` + registry update.
-- `src/components/FloatingBookCta.tsx`, mounted in `Layout`.
-- `src/components/InquiryForm.tsx`.
-- `src/components/SiteHeader.tsx` — scroll-triggered CTA emphasis.
-- `src/pages/Home.tsx` — subcopy + "what to expect" + quote block.
-- `src/pages/Contact.tsx` — mount `InquiryForm`.
+- `src/components/HeroVideo.tsx` — video element with poster fallback + `prefers-reduced-motion` guard; clip goes in `src/assets/`.
+- `src/lib/calendly.ts` + `src/components/CalendlyPopup.tsx` — load the Calendly widget script once; popup helper used by header CTA, floating pill, and program cards. Inline embed component for the booking section.
+- `src/lib/programs.ts` — single source of truth for the six programs (slug, title, blurb, type: `booking` | `library`, calendly path).
+- `src/components/ProgramFinder.tsx` — renders the two tiers on the home page.
+- `src/components/InquiryForm.tsx` — extend `SERVICE_LABELS` with the three working-athlete tracks so chips work for both tiers.
+- `src/components/SiteFooter.tsx` — social icon row (placeholders).
+- `src/pages/Home.tsx` — reordered into hero → program finder → quote → booking embed → inquiry form.
 
-Prereq: if no email domain is configured, I'll open the email setup dialog first.
+No database or backend changes; inquiries keep flowing into the existing `inquiries` table.
