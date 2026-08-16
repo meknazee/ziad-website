@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { openCalendly } from "@/lib/calendly";
 
 const links = [
   { to: "/", label: "Home", end: true },
@@ -40,10 +41,9 @@ export const SiteHeader = () => {
               {l.label}
             </NavLink>
           ))}
-          <a
-            href="https://calendly.com/coach-ziad"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => openCalendly()}
             className={`rounded-full px-5 py-2 transition-all duration-300 ${
               emphasize
                 ? "bg-accent text-accent-foreground shadow-md scale-105"
@@ -51,7 +51,7 @@ export const SiteHeader = () => {
             }`}
           >
             Book a Session
-          </a>
+          </button>
         </nav>
         <button
           className="md:hidden p-3 -mr-2"

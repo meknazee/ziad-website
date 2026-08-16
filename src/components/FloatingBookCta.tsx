@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { CalendarCheck } from "lucide-react";
-
-const CALENDLY_URL = "https://calendly.com/coach-ziad";
+import { openCalendly } from "@/lib/calendly";
 
 export const FloatingBookCta = () => {
   const [visible, setVisible] = useState(false);
