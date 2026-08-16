@@ -40,7 +40,7 @@ const Card = ({
   </div>
 );
 
-export const ProgramFinder = () => {
+export const ProgramFinder = ({ onApply }: { onApply?: (slug: string) => void }) => {
   const navigate = useNavigate();
 
   return (
@@ -83,7 +83,9 @@ export const ProgramFinder = () => {
               key={p.slug}
               program={p}
               action="apply"
-              onClick={() => navigate(`/contact?services=${p.slug}`)}
+              onClick={() =>
+                onApply ? onApply(p.slug) : navigate(`/contact?services=${p.slug}`)
+              }
             />
           ))}
         </div>

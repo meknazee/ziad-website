@@ -10,6 +10,12 @@ const SERVICE_LABELS: Record<string, string> = {
   "semi-private": "semi-private (2)",
   "junior-development": "junior development",
   "strength-conditioning": "strength & conditioning",
+  "private-lessons": "private lessons",
+  "doubles-live-ball": "doubles & live ball clinics",
+  "conditioning-sessions": "conditioning sessions",
+  "wa-junior": "working athlete — junior",
+  "wa-high-performance": "working athlete — high performance",
+  "wa-adult": "working athlete — adult",
 };
 
 const schema = z.object({
