@@ -1,4 +1,10 @@
 import { Link } from "react-router-dom";
+import { Instagram, Youtube } from "lucide-react";
+
+const socials = [
+  { icon: Instagram, label: "instagram" },
+  { icon: Youtube, label: "youtube" },
+];
 
 export const SiteFooter = () => {
   return (
@@ -6,9 +12,19 @@ export const SiteFooter = () => {
       <div className="mx-auto max-w-6xl px-6 py-12 grid gap-8 md:grid-cols-3">
         <div>
           <div className="font-display text-lg">coach ziad&nbsp;</div>
-          <p className="text-sm text-muted-foreground mt-2 max-w-xs">
-            {"\n"}
-          </p>
+          <div className="mt-4 flex items-center gap-3">
+            {socials.map(({ icon: Icon, label }) => (
+              <span
+                key={label}
+                title={`${label} — coming soon`}
+                aria-label={`${label} — coming soon`}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground/60"
+              >
+                <Icon className="h-4 w-4" />
+              </span>
+            ))}
+            <span className="text-xs text-muted-foreground">coming soon</span>
+          </div>
         </div>
         <div className="text-sm">
           <div className="font-medium mb-3">Explore</div>
@@ -23,7 +39,6 @@ export const SiteFooter = () => {
           <div className="font-medium mb-3">Contact</div>
           <ul className="space-y-2 text-muted-foreground">
             <li><a href="mailto:contactme@coachziad.com" className="hover:text-foreground">contactme@coachziad.com</a></li>
-            
           </ul>
         </div>
       </div>
