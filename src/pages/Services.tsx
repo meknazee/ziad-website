@@ -177,6 +177,99 @@ const Services = () => {
         </div>
       </section>
 
+      <section id="packages" className="mx-auto max-w-6xl px-6 py-20 scroll-mt-24">
+        <span className="text-xs uppercase tracking-[0.2em] text-accent">lesson packages</span>
+        <h2 className="mt-4 font-display text-4xl md:text-5xl leading-tight">
+          commit to your game. <em className="text-accent not-italic">save</em> while you do.
+        </h2>
+        <p className="mt-4 text-muted-foreground max-w-2xl">
+          prepaid private-lesson packages at a locked-in rate. the more you commit, the more you save.
+        </p>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {packages.map((p) => (
+            <div
+              key={p.name}
+              className={`relative flex flex-col rounded-2xl border p-7 transition hover:-translate-y-1 ${
+                p.popular ? "bg-foreground text-background border-foreground shadow-court" : "bg-card border-border"
+              }`}
+            >
+              {p.popular && (
+                <span className="absolute -top-3 left-7 rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
+                  most popular
+                </span>
+              )}
+              <h3 className="font-display text-3xl">{p.name}</h3>
+              <p className={`mt-1 text-sm ${p.popular ? "text-background/70" : "text-muted-foreground"}`}>
+                {p.lessons} · {p.discount}
+              </p>
+
+              <div className="mt-6 space-y-4 flex-1">
+                <div>
+                  <p className={`text-xs uppercase tracking-wider ${p.popular ? "text-background/60" : "text-muted-foreground"}`}>
+                    60-minute lessons ($140)
+                  </p>
+                  <p className="mt-1 font-display text-2xl">{p.price60}</p>
+                  <p className={`text-sm ${p.popular ? "text-background/70" : "text-muted-foreground"}`}>{p.per60}</p>
+                </div>
+                <div>
+                  <p className={`text-xs uppercase tracking-wider ${p.popular ? "text-background/60" : "text-muted-foreground"}`}>
+                    90-minute lessons ($205)
+                  </p>
+                  <p className="mt-1 font-display text-2xl">{p.price90}</p>
+                  <p className={`text-sm ${p.popular ? "text-background/70" : "text-muted-foreground"}`}>{p.per90}</p>
+                </div>
+              </div>
+
+              <p className="mt-4 text-sm font-medium text-accent">{p.save} on 60-min</p>
+
+              <a
+                href={`mailto:contactme@coachziad.com?subject=${encodeURIComponent(`${p.name} package inquiry`)}`}
+                className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition ${
+                  p.popular
+                    ? "bg-background text-foreground hover:bg-background/90"
+                    : "bg-foreground text-background hover:bg-foreground/90"
+                }`}
+              >
+                <Mail className="h-4 w-4" />
+                email coach ziad
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 rounded-2xl border border-border bg-card p-7">
+          <h4 className="font-display text-xl">package perks</h4>
+          <ul className="mt-4 grid gap-2.5 text-sm md:grid-cols-2">
+            {[
+              "locked-in rate for the package's validity",
+              "priority booking via calendly",
+              "court fees included — no additional charges",
+              "remaining-lesson email after every session",
+              "video review (set & match)",
+              "progress report + guest session (match only)",
+            ].map((perk) => (
+              <li key={perk} className="flex items-start gap-2">
+                <Check className="h-4 w-4 shrink-0 mt-0.5 text-accent" />
+                <span>{perk}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-5 text-xs text-muted-foreground">
+            valid 6 months (game / set) or 9 months (match) from purchase · 24-hour reschedule notice · unused lessons expire.
+          </p>
+          <a
+            href="/coach-ziad-private-lesson-packages.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center gap-2 rounded-full border border-foreground px-5 py-2.5 text-sm font-medium hover:bg-foreground hover:text-background transition"
+          >
+            <FileDown className="h-4 w-4" />
+            download full terms (pdf)
+          </a>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-6xl px-6 py-20 text-center">
         <h2 className="font-display text-4xl md:text-5xl">ready to hit?</h2>
         <p className="mt-4 text-muted-foreground max-w-md mx-auto">
