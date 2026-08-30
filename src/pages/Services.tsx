@@ -72,7 +72,7 @@ const includes = [
   "Video analysis on request",
   "Loaner racquets for new players",
   "Flexible cancellation (24h notice)",
-  "Package discounts (5 / 10 / 20 sessions)",
+  "Prepaid lesson packages — game / set / match (see below)",
 ];
 
 const locations = [
