@@ -1,6 +1,42 @@
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowRight, Check, CalendarCheck } from "lucide-react";
+import { ArrowRight, Check, CalendarCheck, Mail, FileDown } from "lucide-react";
 import { Layout } from "@/components/Layout";
+
+const packages = [
+  {
+    name: "game",
+    lessons: "12 lessons",
+    discount: "5% off",
+    price60: "$1,596",
+    per60: "$133 / lesson",
+    price90: "$2,337",
+    per90: "$194.75 / lesson",
+    save: "save $84",
+    popular: false,
+  },
+  {
+    name: "set",
+    lessons: "24 lessons",
+    discount: "10% off",
+    price60: "$3,024",
+    per60: "$126 / lesson",
+    price90: "$4,428",
+    per90: "$184.50 / lesson",
+    save: "save $336",
+    popular: true,
+  },
+  {
+    name: "match",
+    lessons: "36 lessons",
+    discount: "15% off",
+    price60: "$4,284",
+    per60: "$119 / lesson",
+    price90: "$6,273",
+    per90: "$174.25 / lesson",
+    save: "save $756",
+    popular: false,
+  },
+];
 
 const tiers = [
   {
