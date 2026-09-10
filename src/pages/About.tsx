@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import portrait from "@/assets/coach-ziad-portrait.jpg.asset.json";
+import actionShot from "@/assets/coach-ziad-img-academy.jpg.asset.json";
 
 const CALENDLY_URL = "https://calendly.com/coach-ziad";
 
@@ -69,6 +70,16 @@ const About = () => {
                 className="h-full w-full object-cover object-center"
                 width={900}
                 height={1200}
+              />
+            </div>
+            <div className="mt-6 md:-mt-16 md:ml-[-2.5rem] aspect-square overflow-hidden rounded-lg shadow-court border-4 border-background">
+              <img
+                src={actionShot.url}
+                alt="Coach Ziad hitting a forehand at IMG Academy"
+                className="h-full w-full object-cover object-center"
+                width={887}
+                height={868}
+                loading="lazy"
               />
             </div>
           </div>
