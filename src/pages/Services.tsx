@@ -202,98 +202,25 @@ const Services = () => {
       </section>
 
       <section id="packages" className="mx-auto max-w-6xl px-6 py-20 scroll-mt-24">
-        <span className="text-xs uppercase tracking-[0.2em] text-accent">lesson packages</span>
-        <h2 className="mt-4 font-display text-4xl md:text-5xl leading-tight">
-          commit to your game. <em className="text-accent not-italic">save</em> while you do.
-        </h2>
-        <p className="mt-4 text-muted-foreground max-w-2xl">
-          prepaid private-lesson packages at a locked-in rate. the more you commit, the more you save.
-        </p>
-
-        <div className="mt-10 grid items-stretch gap-6 md:grid-cols-3">
-          {packages.map((p) => (
-            <div
-              key={p.name}
-              className={`relative flex min-w-0 flex-col overflow-hidden rounded-lg border bg-card transition duration-300 hover:-translate-y-1 hover:shadow-soft ${
-                p.popular ? "border-primary shadow-court md:-translate-y-3 md:hover:-translate-y-4" : "border-border"
-              }`}
-            >
-              <div
-                className={`relative flex min-h-40 flex-col items-center justify-center px-6 pb-12 pt-7 text-center [clip-path:polygon(0_0,100%_0,100%_72%,50%_100%,0_72%)] ${
-                  p.popular ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground"
-                }`}
-              >
-                {p.popular && (
-                  <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-                    most popular
-                  </span>
-                )}
-                <h3 className="font-display text-4xl">{p.name}</h3>
-                <p className={`mt-1 text-xs font-medium uppercase tracking-[0.16em] ${p.popular ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
-                  {p.lessons} · {p.discount}
-                </p>
-              </div>
-
-              <ul className="mt-2 divide-y divide-border">
-                {p.features.map((feature) => (
-                  <li key={feature.label} className="flex min-h-12 items-center gap-3 px-6 py-3 text-sm">
-                    {feature.included ? (
-                      <Check className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-                    ) : (
-                      <X className="h-4 w-4 shrink-0 text-muted-foreground/60" aria-hidden="true" />
-                    )}
-                    <span className={feature.included ? "text-foreground" : "text-muted-foreground line-through decoration-border"}>
-                      {feature.label}
-                    </span>
-                    <span className="sr-only">{feature.included ? "included" : "not included"}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="flex-1 px-6 pb-6 pt-7 text-center">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-xs uppercase tracking-wider text-muted-foreground">60 minutes</p>
-                    <p className="mt-1 font-display text-3xl">{p.price60}</p>
-                    <p className="text-xs text-muted-foreground">{p.per60}</p>
-                  </div>
-                  <div className="border-l border-border pl-4">
-                    <p className="text-xs uppercase tracking-wider text-muted-foreground">90 minutes</p>
-                    <p className="mt-1 font-display text-3xl">{p.price90}</p>
-                    <p className="text-xs text-muted-foreground">{p.per90}</p>
-                  </div>
-                </div>
-                <p className="mt-5 text-sm font-semibold text-accent">{p.save} on 60-min</p>
-              </div>
-
-              <a
-                href={`mailto:contactme@coachziad.com?subject=${encodeURIComponent(`${p.name} package inquiry`)}`}
-                className={`mx-6 mb-6 inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium transition ${
-                  p.popular ? "bg-accent text-accent-foreground hover:bg-accent/90" : "bg-primary text-primary-foreground hover:bg-primary/90"
-                }`}
-              >
-                <Mail className="h-4 w-4" />
-                email coach ziad
-              </a>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-8 flex flex-col items-start justify-between gap-5 border-t border-border pt-6 sm:flex-row sm:items-center">
-          <p className="max-w-3xl text-xs leading-relaxed text-muted-foreground">
-            valid 6 months (game / set) or 9 months (match) from purchase · 24-hour reschedule notice · unused lessons expire.
+        <div className="rounded-2xl border border-border bg-secondary/40 px-8 py-12 text-center">
+          <span className="text-xs uppercase tracking-[0.2em] text-accent">lesson packages</span>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl leading-tight">
+            commit to your game. <em className="text-accent not-italic">save</em> while you do.
+          </h2>
+          <p className="mt-4 mx-auto max-w-2xl text-muted-foreground">
+            prepaid blocks at a locked-in rate — private lessons, doubles and junior development clinics,
+            and 5-session shot masterclasses.
           </p>
-          <a
-            href="/coach-ziad-private-lesson-packages.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex shrink-0 items-center gap-2 rounded-md border border-primary px-5 py-2.5 text-sm font-medium text-primary transition hover:bg-primary hover:text-primary-foreground"
+          <Link
+            to="/packages"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-background font-medium hover:bg-foreground/90 transition group"
           >
-            <FileDown className="h-4 w-4" />
-            download full terms (pdf)
-          </a>
+            view all packages
+            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
+          </Link>
         </div>
       </section>
+
 
       <section className="mx-auto max-w-6xl px-6 py-20 text-center">
         <h2 className="font-display text-4xl md:text-5xl">ready to hit?</h2>
