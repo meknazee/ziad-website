@@ -11,6 +11,9 @@ import {
   masterclassFormat,
   privatePdf,
   masterclassPdf,
+  commonTerms,
+  privateTerms,
+  masterclassTerms,
 } from "@/lib/packages";
 import {
   Accordion,
