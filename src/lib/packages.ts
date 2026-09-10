@@ -101,6 +101,7 @@ export const clinicGroups: ClinicGroup[] = [
     pdf: "/coach-ziad-doubles-clinic-packages.pdf",
     blurb: "90-minute doubles patterns, positioning and point play. $60 per player drop-in rate.",
     baseline: "$60 / clinic",
+    terms: "valid 6 months (game / set) or 9 months (match) from purchase · unused clinics expire.",
     tiers: [
       {
         name: "game",
@@ -140,6 +141,7 @@ export const clinicGroups: ClinicGroup[] = [
     pdf: "/coach-ziad-junior-development-packages.pdf",
     blurb: "90-minute clinics for ages 8–17 — technique, movement and competitive reps. $50 per player drop-in rate.",
     baseline: "$50 / clinic",
+    terms: "valid 9 months from purchase · unused clinics expire.",
     tiers: [
       {
         name: "game",
@@ -190,3 +192,6 @@ export const masterclassPdf = "/coach-ziad-shot-masterclass-packages.pdf";
 
 export const masterclassPrice = "$275";
 export const masterclassFormat = "5 × 60 min · max 3 players";
+export const masterclassTerms = "valid 4 months from purchase · unused sessions expire.";
+export const privateTerms =
+  "valid 6 months (game / set) or 9 months (match) from purchase · unused lessons expire.";
