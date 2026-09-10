@@ -8,7 +8,7 @@ const tiers = [
     slug: "private-1-1",
     name: "Private 1:1",
     blurb: "Just you and me. The fastest way to improve.",
-    features: ["60 or 90 min sessions", "Video review included", "Personalized practice plan", "Progress check every 6 weeks"],
+    features: ["60 or 90 min sessions", "Video review on request", "Personalized practice plan", "Check-ins included on package plans"],
     featured: true,
   },
   {
@@ -21,7 +21,7 @@ const tiers = [
     slug: "junior-development",
     name: "Junior Development",
     blurb: "Ages 8–17. Technique, tactics, tournament prep.",
-    features: ["Age-appropriate progression", "USTA tournament guidance", "Parent updates each month", "Group clinics available"],
+    features: ["Age-appropriate progression", "USTA tournament guidance", "Parent updates on progress", "Group clinics available"],
   },
   {
     slug: "strength-conditioning",
@@ -33,10 +33,10 @@ const tiers = [
 
 const includes = [
   "Free 30-minute intro session",
-  "Court fees included at partner clubs",
+  "Court fees vary by facility — included in package prices",
   "Video analysis on request",
   "Loaner racquets for new players",
-  "Flexible cancellation (24h notice)",
+  "24-hour notice to reschedule",
   "Prepaid lesson packages — game / set / match (see below)",
 ];
 
