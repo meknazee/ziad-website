@@ -5,6 +5,7 @@ export type PackagePrice = { label: string; total: string; per: string };
 export type PackageTier = {
   name: string;
   sessions: string;
+  duration: string;
   discount: string;
   prices: PackagePrice[];
   save: string;
@@ -30,6 +31,7 @@ export const privateTiers: PackageTier[] = [
   {
     name: "game",
     sessions: "12 lessons",
+    duration: "60 or 90 min per lesson",
     discount: "5% off",
     prices: [
       { label: "60 minutes", total: "$1,596", per: "$133 / lesson" },
@@ -42,6 +44,7 @@ export const privateTiers: PackageTier[] = [
   {
     name: "set",
     sessions: "24 lessons",
+    duration: "60 or 90 min per lesson",
     discount: "10% off",
     prices: [
       { label: "60 minutes", total: "$3,024", per: "$126 / lesson" },
@@ -54,6 +57,7 @@ export const privateTiers: PackageTier[] = [
   {
     name: "match",
     sessions: "36 lessons",
+    duration: "60 or 90 min per lesson",
     discount: "15% off",
     prices: [
       { label: "60 minutes", total: "$4,284", per: "$119 / lesson" },
@@ -81,6 +85,7 @@ export type ClinicGroup = {
   title: string;
   blurb: string;
   baseline: string;
+  pdf: string;
   tiers: PackageTier[];
 };
 
@@ -88,12 +93,14 @@ export const clinicGroups: ClinicGroup[] = [
   {
     slug: "doubles",
     title: "doubles clinics",
+    pdf: "/coach-ziad-doubles-clinic-packages.pdf",
     blurb: "90-minute doubles patterns, positioning and point play. $60 per player drop-in rate.",
     baseline: "$60 / clinic",
     tiers: [
       {
         name: "game",
         sessions: "6 clinics",
+        duration: "90 min per clinic",
         discount: "5% off",
         prices: [{ label: "per player", total: "$342", per: "$57 / clinic" }],
         save: "save $18",
@@ -103,6 +110,7 @@ export const clinicGroups: ClinicGroup[] = [
       {
         name: "set",
         sessions: "12 clinics",
+        duration: "90 min per clinic",
         discount: "10% off",
         prices: [{ label: "per player", total: "$648", per: "$54 / clinic" }],
         save: "save $72",
@@ -112,6 +120,7 @@ export const clinicGroups: ClinicGroup[] = [
       {
         name: "match",
         sessions: "18 clinics",
+        duration: "90 min per clinic",
         discount: "15% off",
         prices: [{ label: "per player", total: "$918", per: "$51 / clinic" }],
         save: "save $162",
@@ -123,12 +132,14 @@ export const clinicGroups: ClinicGroup[] = [
   {
     slug: "junior-development",
     title: "junior development clinics",
+    pdf: "/coach-ziad-junior-development-packages.pdf",
     blurb: "90-minute clinics for ages 8–17 — technique, movement and competitive reps. $50 per player drop-in rate.",
     baseline: "$50 / clinic",
     tiers: [
       {
         name: "game",
         sessions: "12 clinics",
+        duration: "90 min per clinic",
         discount: "5% off",
         prices: [{ label: "per player", total: "$570", per: "$47.50 / clinic" }],
         save: "save $30",
@@ -138,6 +149,7 @@ export const clinicGroups: ClinicGroup[] = [
       {
         name: "set",
         sessions: "18 clinics",
+        duration: "90 min per clinic",
         discount: "10% off",
         prices: [{ label: "per player", total: "$810", per: "$45 / clinic" }],
         save: "save $90",
@@ -147,6 +159,7 @@ export const clinicGroups: ClinicGroup[] = [
       {
         name: "match",
         sessions: "24 clinics",
+        duration: "90 min per clinic",
         discount: "15% off",
         prices: [{ label: "per player", total: "$1,020", per: "$42.50 / clinic" }],
         save: "save $180",
@@ -166,6 +179,9 @@ export const masterclasses: Masterclass[] = [
   { slug: "topspin", shot: "topspin", blurb: "heavier shape, higher margin, more court to play with." },
   { slug: "return", shot: "return", blurb: "read, split, block — turn the return into a weapon." },
 ];
+
+export const privatePdf = "/coach-ziad-private-lesson-packages.pdf";
+export const masterclassPdf = "/coach-ziad-shot-masterclass-packages.pdf";
 
 export const masterclassPrice = "$275";
 export const masterclassFormat = "5 × 60 min · max 3 players";
