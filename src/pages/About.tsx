@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
-import portrait from "@/assets/coach-ziad-portrait.jpg.asset.json";
 import actionShot from "@/assets/coach-ziad-img-academy.jpg.asset.json";
 
 const CALENDLY_URL = "https://calendly.com/coach-ziad";
