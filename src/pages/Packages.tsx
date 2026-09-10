@@ -74,9 +74,7 @@ const Packages = () => (
 
             <div className="mt-8 flex flex-col items-start justify-between gap-5 border-t border-border pt-6 sm:flex-row sm:items-center">
               <p className="max-w-3xl text-xs leading-relaxed text-muted-foreground">
-                valid 6 months (game / set) or 9 months (match) from purchase · 24-hour reschedule notice ·
-                unused lessons expire · transfers to friends & family are subject to the restrictions in the
-                full terms.
+                {privateTerms} {commonTerms}
               </p>
               <a
                 href={privatePdf}
@@ -124,6 +122,9 @@ const Packages = () => (
                     <FileDown className="h-4 w-4" />
                     download {g.title} pdf (prices + terms)
                   </a>
+                  <p className="mt-4 max-w-3xl text-xs leading-relaxed text-muted-foreground">
+                    {g.terms} {commonTerms}
+                  </p>
                 </div>
               ))}
             </div>
@@ -186,8 +187,11 @@ const Packages = () => (
               </a>
             </div>
             <p className="mt-6 text-xs leading-relaxed text-muted-foreground">
-              included in every masterclass: small-group coaching, video feedback on request, and a simple
-              practice plan to keep the change after the block ends.
+              included in every masterclass: small-group coaching (max 3 players), video feedback on request,
+              a written practice plan at the end, and court fees at partner facilities.
+            </p>
+            <p className="mt-3 max-w-3xl text-xs leading-relaxed text-muted-foreground">
+              {masterclassTerms} {commonTerms}
             </p>
           </AccordionContent>
         </AccordionItem>
