@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, FileDown, Mail, Target } from "lucide-react";
+import { ArrowRight, FileDown, Mail, Target, CalendarCheck } from "lucide-react";
+import { openCalendly } from "@/lib/calendly";
 import { Layout } from "@/components/Layout";
 import { PackageCard } from "@/components/PackageCard";
 import {
@@ -8,6 +9,8 @@ import {
   masterclasses,
   masterclassPrice,
   masterclassFormat,
+  privatePdf,
+  masterclassPdf,
 } from "@/lib/packages";
 import {
   Accordion,
@@ -34,6 +37,22 @@ const Packages = () => (
         prepaid blocks at a locked-in rate — private lessons, group clinics and shot masterclasses.
         pick a section below to see the tiers.
       </p>
+      <div className="mt-8 flex flex-wrap gap-3">
+        <button
+          type="button"
+          onClick={() => openCalendly()}
+          className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-medium text-accent-foreground transition hover:bg-accent/90"
+        >
+          <CalendarCheck className="h-4 w-4" />
+          book a session
+        </button>
+        <Link
+          to="/contact"
+          className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 text-sm font-medium transition hover:bg-secondary"
+        >
+          ask about a package
+        </Link>
+      </div>
     </section>
 
     <section className="mx-auto max-w-6xl px-6 pb-24">
@@ -57,7 +76,7 @@ const Packages = () => (
                 full terms.
               </p>
               <a
-                href="/coach-ziad-private-lesson-packages.pdf"
+                href={privatePdf}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex shrink-0 items-center gap-2 rounded-md border border-primary px-5 py-2.5 text-sm font-medium text-primary transition hover:bg-primary hover:text-primary-foreground"
@@ -93,6 +112,15 @@ const Packages = () => (
                       <PackageCard key={t.name} tier={t} context={g.title} />
                     ))}
                   </div>
+                  <a
+                    href={g.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center gap-2 rounded-md border border-primary px-5 py-2.5 text-sm font-medium text-primary transition hover:bg-primary hover:text-primary-foreground"
+                  >
+                    <FileDown className="h-4 w-4" />
+                    download {g.title} pdf (prices + terms)
+                  </a>
                 </div>
               ))}
             </div>
@@ -134,6 +162,25 @@ const Packages = () => (
                   </a>
                 </div>
               ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <button
+                type="button"
+                onClick={() => openCalendly()}
+                className="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition hover:bg-accent/90"
+              >
+                <CalendarCheck className="h-4 w-4" />
+                book a masterclass
+              </button>
+              <a
+                href={masterclassPdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-md border border-primary px-5 py-2.5 text-sm font-medium text-primary transition hover:bg-primary hover:text-primary-foreground"
+              >
+                <FileDown className="h-4 w-4" />
+                download masterclass pdf (prices + terms)
+              </a>
             </div>
             <p className="mt-6 text-xs leading-relaxed text-muted-foreground">
               included in every masterclass: small-group coaching, video feedback on request, and a simple

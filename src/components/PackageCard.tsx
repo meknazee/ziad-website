@@ -1,5 +1,6 @@
-import { Check, X, Mail } from "lucide-react";
+import { Check, X, Mail, CalendarCheck } from "lucide-react";
 import type { PackageTier } from "@/lib/packages";
+import { openCalendly } from "@/lib/calendly";
 
 type Props = {
   tier: PackageTier;
@@ -28,6 +29,9 @@ export const PackageCard = ({ tier: p, context }: Props) => (
         }`}
       >
         {p.sessions} · {p.discount}
+      </p>
+      <p className={`mt-1 text-xs ${p.popular ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
+        {p.duration}
       </p>
     </div>
 
@@ -64,16 +68,26 @@ export const PackageCard = ({ tier: p, context }: Props) => (
       <p className="mt-5 text-sm font-semibold text-accent">{p.save}</p>
     </div>
 
-    <a
+    <div className="mx-6 mb-6 grid gap-2">
+      <button
+        type="button"
+        onClick={() => openCalendly()}
+        className={`inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium transition ${
+          p.popular
+            ? "bg-accent text-accent-foreground hover:bg-accent/90"
+            : "bg-primary text-primary-foreground hover:bg-primary/90"
+        }`}
+      >
+        <CalendarCheck className="h-4 w-4" />
+        book a session
+      </button>
+      <a
       href={`mailto:contactme@coachziad.com?subject=${encodeURIComponent(`${p.name} — ${context} inquiry`)}`}
-      className={`mx-6 mb-6 inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium transition ${
-        p.popular
-          ? "bg-accent text-accent-foreground hover:bg-accent/90"
-          : "bg-primary text-primary-foreground hover:bg-primary/90"
-      }`}
+      className="inline-flex items-center justify-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium text-foreground transition hover:bg-secondary"
     >
       <Mail className="h-4 w-4" />
-      email coach ziad
+      ask a question
     </a>
+    </div>
   </div>
 );
