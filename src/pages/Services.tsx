@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowRight, Check, CalendarCheck, Mail, FileDown } from "lucide-react";
+import { ArrowRight, Check, X, CalendarCheck, Mail, FileDown } from "lucide-react";
 import { Layout } from "@/components/Layout";
 
 const packages = [
@@ -13,6 +13,14 @@ const packages = [
     per90: "$194.75 / lesson",
     save: "save $84",
     popular: false,
+    features: [
+      { label: "locked-in rate", included: true },
+      { label: "priority calendly booking", included: true },
+      { label: "court fees included", included: true },
+      { label: "remaining-lesson emails", included: true },
+      { label: "video review", included: false },
+      { label: "progress report + guest session", included: false },
+    ],
   },
   {
     name: "set",
@@ -24,6 +32,14 @@ const packages = [
     per90: "$184.50 / lesson",
     save: "save $336",
     popular: true,
+    features: [
+      { label: "locked-in rate", included: true },
+      { label: "priority calendly booking", included: true },
+      { label: "court fees included", included: true },
+      { label: "remaining-lesson emails", included: true },
+      { label: "video review", included: true },
+      { label: "progress report + guest session", included: false },
+    ],
   },
   {
     name: "match",
@@ -35,6 +51,14 @@ const packages = [
     per90: "$174.25 / lesson",
     save: "save $756",
     popular: false,
+    features: [
+      { label: "locked-in rate", included: true },
+      { label: "priority calendly booking", included: true },
+      { label: "court fees included", included: true },
+      { label: "remaining-lesson emails", included: true },
+      { label: "video review", included: true },
+      { label: "progress report + guest session", included: true },
+    ],
   },
 ];
 
@@ -186,49 +210,66 @@ const Services = () => {
           prepaid private-lesson packages at a locked-in rate. the more you commit, the more you save.
         </p>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 grid items-stretch gap-6 md:grid-cols-3">
           {packages.map((p) => (
             <div
               key={p.name}
-              className={`relative flex flex-col rounded-2xl border p-7 transition hover:-translate-y-1 ${
-                p.popular ? "bg-foreground text-background border-foreground shadow-court" : "bg-card border-border"
+              className={`relative flex min-w-0 flex-col overflow-hidden rounded-lg border bg-card transition duration-300 hover:-translate-y-1 hover:shadow-soft ${
+                p.popular ? "border-primary shadow-court md:-translate-y-3 md:hover:-translate-y-4" : "border-border"
               }`}
             >
-              {p.popular && (
-                <span className="absolute -top-3 left-7 rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
-                  most popular
-                </span>
-              )}
-              <h3 className="font-display text-3xl">{p.name}</h3>
-              <p className={`mt-1 text-sm ${p.popular ? "text-background/70" : "text-muted-foreground"}`}>
-                {p.lessons} · {p.discount}
-              </p>
-
-              <div className="mt-6 space-y-4 flex-1">
-                <div>
-                  <p className={`text-xs uppercase tracking-wider ${p.popular ? "text-background/60" : "text-muted-foreground"}`}>
-                    60-minute lessons ($140)
-                  </p>
-                  <p className="mt-1 font-display text-2xl">{p.price60}</p>
-                  <p className={`text-sm ${p.popular ? "text-background/70" : "text-muted-foreground"}`}>{p.per60}</p>
-                </div>
-                <div>
-                  <p className={`text-xs uppercase tracking-wider ${p.popular ? "text-background/60" : "text-muted-foreground"}`}>
-                    90-minute lessons ($205)
-                  </p>
-                  <p className="mt-1 font-display text-2xl">{p.price90}</p>
-                  <p className={`text-sm ${p.popular ? "text-background/70" : "text-muted-foreground"}`}>{p.per90}</p>
-                </div>
+              <div
+                className={`relative flex min-h-40 flex-col items-center justify-center px-6 pb-12 pt-7 text-center [clip-path:polygon(0_0,100%_0,100%_72%,50%_100%,0_72%)] ${
+                  p.popular ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground"
+                }`}
+              >
+                {p.popular && (
+                  <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                    most popular
+                  </span>
+                )}
+                <h3 className="font-display text-4xl">{p.name}</h3>
+                <p className={`mt-1 text-xs font-medium uppercase tracking-[0.16em] ${p.popular ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
+                  {p.lessons} · {p.discount}
+                </p>
               </div>
 
-              <p className="mt-4 text-sm font-medium text-accent">{p.save} on 60-min</p>
+              <ul className="mt-2 divide-y divide-border">
+                {p.features.map((feature) => (
+                  <li key={feature.label} className="flex min-h-12 items-center gap-3 px-6 py-3 text-sm">
+                    {feature.included ? (
+                      <Check className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                    ) : (
+                      <X className="h-4 w-4 shrink-0 text-muted-foreground/60" aria-hidden="true" />
+                    )}
+                    <span className={feature.included ? "text-foreground" : "text-muted-foreground line-through decoration-border"}>
+                      {feature.label}
+                    </span>
+                    <span className="sr-only">{feature.included ? "included" : "not included"}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex-1 px-6 pb-6 pt-7 text-center">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground">60 minutes</p>
+                    <p className="mt-1 font-display text-3xl">{p.price60}</p>
+                    <p className="text-xs text-muted-foreground">{p.per60}</p>
+                  </div>
+                  <div className="border-l border-border pl-4">
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground">90 minutes</p>
+                    <p className="mt-1 font-display text-3xl">{p.price90}</p>
+                    <p className="text-xs text-muted-foreground">{p.per90}</p>
+                  </div>
+                </div>
+                <p className="mt-5 text-sm font-semibold text-accent">{p.save} on 60-min</p>
+              </div>
 
               <a
                 href={`mailto:contactme@coachziad.com?subject=${encodeURIComponent(`${p.name} package inquiry`)}`}
-                className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition ${
-                  p.popular
-                    ? "bg-background text-foreground hover:bg-background/90"
-                    : "bg-foreground text-background hover:bg-foreground/90"
+                className={`mx-6 mb-6 inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium transition ${
+                  p.popular ? "bg-accent text-accent-foreground hover:bg-accent/90" : "bg-primary text-primary-foreground hover:bg-primary/90"
                 }`}
               >
                 <Mail className="h-4 w-4" />
@@ -238,31 +279,15 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="mt-10 rounded-2xl border border-border bg-card p-7">
-          <h4 className="font-display text-xl">package perks</h4>
-          <ul className="mt-4 grid gap-2.5 text-sm md:grid-cols-2">
-            {[
-              "locked-in rate for the package's validity",
-              "priority booking via calendly",
-              "court fees included — no additional charges",
-              "remaining-lesson email after every session",
-              "video review (set & match)",
-              "progress report + guest session (match only)",
-            ].map((perk) => (
-              <li key={perk} className="flex items-start gap-2">
-                <Check className="h-4 w-4 shrink-0 mt-0.5 text-accent" />
-                <span>{perk}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-5 text-xs text-muted-foreground">
+        <div className="mt-8 flex flex-col items-start justify-between gap-5 border-t border-border pt-6 sm:flex-row sm:items-center">
+          <p className="max-w-3xl text-xs leading-relaxed text-muted-foreground">
             valid 6 months (game / set) or 9 months (match) from purchase · 24-hour reschedule notice · unused lessons expire.
           </p>
           <a
             href="/coach-ziad-private-lesson-packages.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 inline-flex items-center gap-2 rounded-full border border-foreground px-5 py-2.5 text-sm font-medium hover:bg-foreground hover:text-background transition"
+            className="inline-flex shrink-0 items-center gap-2 rounded-md border border-primary px-5 py-2.5 text-sm font-medium text-primary transition hover:bg-primary hover:text-primary-foreground"
           >
             <FileDown className="h-4 w-4" />
             download full terms (pdf)
