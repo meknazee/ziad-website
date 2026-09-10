@@ -86,8 +86,13 @@ export type ClinicGroup = {
   blurb: string;
   baseline: string;
   pdf: string;
+  terms: string;
   tiers: PackageTier[];
 };
+
+/** wording shared with page 2 of every package pdf */
+export const commonTerms =
+  "prepaid in full before the first session · 24-hour notice to reschedule, otherwise the session is deducted · sessions cancelled by coach ziad or lost to weather are returned at no cost · non-refundable once the first session is used · transfers, where included, are in writing, limited to 25% of the package and may not be resold.";
 
 export const clinicGroups: ClinicGroup[] = [
   {
