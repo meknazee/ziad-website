@@ -15,8 +15,21 @@ const About = () => {
   return (
     <Layout>
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-16">
-        <div className="grid gap-14 md:grid-cols-[1.1fr_0.9fr] items-center">
-          <div>
+        <div className="grid gap-12 md:gap-14 md:grid-cols-[0.9fr_1.1fr] items-center">
+          <div className="order-first md:order-2">
+            <div className="aspect-[4/5] overflow-hidden rounded-lg shadow-court">
+              <img
+                src={actionShot.url}
+                alt="Coach Ziad hitting a forehand at IMG Academy"
+                className="h-full w-full object-cover object-center"
+                width={887}
+                height={868}
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <div className="md:order-1">
             <span className="text-xs uppercase tracking-[0.3em] text-accent font-semibold">
               About Me
             </span>
@@ -58,28 +71,6 @@ const About = () => {
                 Book a Session
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
               </a>
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="aspect-[4/5] overflow-hidden rounded-lg shadow-court">
-              <img
-                src={portrait.url}
-                alt="Coach Ziad on the tennis court"
-                className="h-full w-full object-cover object-center"
-                width={900}
-                height={1200}
-              />
-            </div>
-            <div className="mt-6 md:-mt-16 md:ml-[-2.5rem] aspect-square overflow-hidden rounded-lg shadow-court border-4 border-background">
-              <img
-                src={actionShot.url}
-                alt="Coach Ziad hitting a forehand at IMG Academy"
-                className="h-full w-full object-cover object-center"
-                width={887}
-                height={868}
-                loading="lazy"
-              />
             </div>
           </div>
         </div>
