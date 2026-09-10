@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Check, X, Mail } from "lucide-react";
 import type { PackageTier } from "@/lib/packages";
 
 type Props = {
