@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Services from "./pages/Services";
+import Packages from "./pages/Packages";
 import WorkingAthlete from "./pages/WorkingAthlete";
 import Book from "./pages/Book";
 import BookMeetingType from "./pages/BookMeetingType";
@@ -29,6 +30,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/packages" element={<Packages />} />
             <Route path="/working-athlete" element={<WorkingAthlete />} />
             {/* Redirect the old route so existing links don't 404 */}
             <Route
