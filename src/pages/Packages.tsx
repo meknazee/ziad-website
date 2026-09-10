@@ -155,15 +155,17 @@ const Packages = () => (
                   <p className="mt-2 flex-1 text-sm text-muted-foreground">{m.blurb}</p>
                   <p className="mt-5 font-display text-3xl">{masterclassPrice}</p>
                   <p className="text-xs text-muted-foreground">{masterclassFormat}</p>
-                  <a
-                    href={`mailto:contactme@coachziad.com?subject=${encodeURIComponent(
-                      `${m.shot} masterclass inquiry`,
-                    )}`}
-                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:bg-primary/90"
-                  >
-                    <Mail className="h-4 w-4" />
-                    email coach ziad
-                  </a>
+                   <a
+                     href={`mailto:contactme@coachziad.com?subject=${encodeURIComponent(
+                       `sign me up, coach — ${m.shot} masterclass`,
+                     )}&body=${encodeURIComponent(
+                       `hi coach ziad,\n\ni'd like to sign up for the ${m.shot} masterclass.\n\nname:\nphone:\npreferred start date:\n\nthanks!`,
+                     )}`}
+                     className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:bg-primary/90"
+                   >
+                     <Mail className="h-4 w-4" />
+                     sign me up, coach
+                   </a>
                 </div>
               ))}
             </div>

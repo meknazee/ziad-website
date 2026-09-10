@@ -1,6 +1,5 @@
-import { Check, X, Mail, CalendarCheck } from "lucide-react";
+import { Check, X, Mail } from "lucide-react";
 import type { PackageTier } from "@/lib/packages";
-import { openCalendly } from "@/lib/calendly";
 
 type Props = {
   tier: PackageTier;
@@ -68,26 +67,18 @@ export const PackageCard = ({ tier: p, context }: Props) => (
       <p className="mt-5 text-sm font-semibold text-accent">{p.save}</p>
     </div>
 
-    <div className="mx-6 mb-6 grid gap-2">
-      <button
-        type="button"
-        onClick={() => openCalendly()}
-        className={`inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium transition ${
-          p.popular
-            ? "bg-accent text-accent-foreground hover:bg-accent/90"
-            : "bg-primary text-primary-foreground hover:bg-primary/90"
-        }`}
-      >
-        <CalendarCheck className="h-4 w-4" />
-        book a session
-      </button>
+    <div className="mx-6 mb-6">
       <a
-      href={`mailto:contactme@coachziad.com?subject=${encodeURIComponent(`${p.name} — ${context} inquiry`)}`}
-      className="inline-flex items-center justify-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium text-foreground transition hover:bg-secondary"
-    >
-      <Mail className="h-4 w-4" />
-      ask a question
-    </a>
+        href={`mailto:contactme@coachziad.com?subject=${encodeURIComponent(
+          `sign me up, coach — ${p.name} (${context})`,
+        )}&body=${encodeURIComponent(
+          `hi coach ziad,\n\ni'd like to sign up for the ${p.name} package (${context}).\n\nname:\nphone:\npreferred start date:\n\nthanks!`,
+        )}`}
+        className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition hover:bg-primary/90"
+      >
+        <Mail className="h-4 w-4" />
+        sign me up, coach
+      </a>
     </div>
   </div>
 );
