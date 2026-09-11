@@ -1,6 +1,7 @@
 import { Mail, MapPin, ArrowRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { InquiryForm } from "@/components/InquiryForm";
+import portrait from "@/assets/coach-ziad-portrait.jpg.asset.json";
 
 const CALENDLY_URL = "https://calendly.com/coach-ziad";
 
@@ -40,43 +41,54 @@ const Contact = () => {
           i'll confirm within a day.
         </p>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[1.3fr_1fr]">
-          <InquiryForm />
-
-          <div className="space-y-4">
-            {details.map(({ icon: Icon, label, value, href }) => {
-              const inner = (
-                <div className="flex items-center gap-4 rounded-xl border border-border bg-card px-5 py-4 transition-colors hover:border-accent">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                    <Icon className="h-4 w-4" strokeWidth={2} />
-                  </span>
-                  <div>
-                    <div className="text-xs uppercase tracking-widest text-muted-foreground">
-                      {label}
-                    </div>
-                    <div className="font-medium">{value}</div>
-                  </div>
-                </div>
-              );
-              return href ? (
-                <a key={label} href={href} className="block">
-                  {inner}
-                </a>
-              ) : (
-                <div key={label}>{inner}</div>
-              );
-            })}
-
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-background font-medium hover:bg-foreground/90 transition group"
-            >
-              book a session
-              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
-            </a>
+        <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.3fr] items-start">
+          <div className="mx-auto lg:mx-0 max-w-[260px] lg:max-w-none">
+            <div className="aspect-[4/5] overflow-hidden rounded-2xl border border-border shadow-court">
+              <img
+                src={portrait.url}
+                alt="Coach Ziad portrait"
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
           </div>
+
+          <InquiryForm />
+        </div>
+
+        <div className="mt-12 grid gap-4 md:grid-cols-3">
+          {details.map(({ icon: Icon, label, value, href }) => {
+            const inner = (
+              <div className="flex items-center gap-4 rounded-xl border border-border bg-card px-5 py-4 transition-colors hover:border-accent">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                  <Icon className="h-4 w-4" strokeWidth={2} />
+                </span>
+                <div>
+                  <div className="text-xs uppercase tracking-widest text-muted-foreground">
+                    {label}
+                  </div>
+                  <div className="font-medium">{value}</div>
+                </div>
+              </div>
+            );
+            return href ? (
+              <a key={label} href={href} className="block">
+                {inner}
+              </a>
+            ) : (
+              <div key={label}>{inner}</div>
+            );
+          })}
+
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-background font-medium hover:bg-foreground/90 transition group"
+          >
+            book a session
+            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
+          </a>
         </div>
       </section>
     </Layout>
