@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, Check, CalendarCheck } from "lucide-react";
 import { Layout } from "@/components/Layout";
+import courtsAsset from "@/assets/coach-ziad-tennis-courts.jpg.asset.json";
 
 
 const tiers = [
@@ -54,15 +55,24 @@ const Services = () => {
 
   return (
     <Layout>
-      <section className="mx-auto max-w-6xl px-6 pt-20 pb-12">
-        <span className="text-xs uppercase tracking-[0.2em] text-accent">services</span>
-        <h1 className="mt-4 font-display text-5xl md:text-6xl leading-[1] max-w-3xl">
-          sessions built around <em className="text-accent not-italic">your</em> game.
-        </h1>
-        <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
-          pick what fits — tap schedule on any card to start an inquiry. i'll follow up
-          personally with pricing, availability, and a suggested starting point.
-        </p>
+      <section className="relative isolate overflow-hidden border-b border-border min-h-[30rem] flex items-end">
+        <img
+          src={courtsAsset.url}
+          alt="tennis courts where coach ziad trains players"
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-center opacity-55"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-background via-background/90 to-background/25" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-background via-transparent to-background/20" />
+        <div className="mx-auto w-full max-w-6xl px-6 pt-24 pb-16">
+          <span className="text-xs uppercase tracking-[0.2em] text-accent">services</span>
+          <h1 className="mt-4 font-display text-5xl md:text-6xl leading-[1] max-w-3xl">
+            sessions built around <em className="text-accent not-italic">your</em> game.
+          </h1>
+          <p className="mt-6 text-lg text-foreground/75 max-w-2xl">
+            pick what fits — tap schedule on any card to start an inquiry. i'll follow up
+            personally with pricing, availability, and a suggested starting point.
+          </p>
+        </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
