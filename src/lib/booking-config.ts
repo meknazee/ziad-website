@@ -17,7 +17,7 @@ export const MEETING_TYPES: MeetingType[] = [
     description:
       "30 minutes on court so we can hit, talk goals, and figure out a starting point. No charge.",
     duration_minutes: 30,
-    location: "Tuckahoe Recreation Club · Arlington, VA",
+    location: "Tuckahoe Recreation Club · McLean, VA",
     featured: true,
   },
   {
@@ -26,7 +26,7 @@ export const MEETING_TYPES: MeetingType[] = [
     description:
       "One-on-one coaching. Technique, tactics, point play — built around your game.",
     duration_minutes: 60,
-    location: "Tuckahoe Recreation Club · Arlington, VA",
+    location: "Tuckahoe Recreation Club · McLean, VA",
   },
   {
     slug: "private-90",
@@ -34,7 +34,7 @@ export const MEETING_TYPES: MeetingType[] = [
     description:
       "Deeper session for technical work, drill blocks, and match-play simulation.",
     duration_minutes: 90,
-    location: "Tuckahoe Recreation Club · Arlington, VA",
+    location: "Tuckahoe Recreation Club · McLean, VA",
   },
   {
     slug: "semi-private-60",
@@ -42,7 +42,7 @@ export const MEETING_TYPES: MeetingType[] = [
     description:
       "Bring a partner. Shared cost, shared court. Best if you play at similar levels.",
     duration_minutes: 60,
-    location: "Tuckahoe Recreation Club · Arlington, VA",
+    location: "Tuckahoe Recreation Club · McLean, VA",
   },
   {
     slug: "junior-60",
@@ -50,7 +50,7 @@ export const MEETING_TYPES: MeetingType[] = [
     description:
       "Ages 8–17. Age-appropriate technique, tactics, and tournament prep.",
     duration_minutes: 60,
-    location: "Tuckahoe Recreation Club · Arlington, VA",
+    location: "Tuckahoe Recreation Club · McLean, VA",
   },
 ];
 
