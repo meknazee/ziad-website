@@ -66,7 +66,7 @@ const Packages = () => (
             <SectionHeader title="private lessons" summary="one-on-one — game / set / match, 60 or 90 minutes." />
           </AccordionTrigger>
           <AccordionContent className="pb-8">
-            <div className="mt-4 grid items-stretch gap-6 md:grid-cols-3">
+            <div className="mt-4 grid items-stretch gap-6 xl:grid-cols-3">
               {privateTiers.map((t) => (
                 <PackageCard key={t.name} tier={t} context="private lesson package" />
               ))}
@@ -108,7 +108,7 @@ const Packages = () => (
                     </span>
                   </div>
                   <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{g.blurb}</p>
-                  <div className="mt-6 grid items-stretch gap-6 md:grid-cols-3">
+                   <div className="mt-6 grid items-stretch gap-6 xl:grid-cols-3">
                     {g.tiers.map((t) => (
                       <PackageCard key={t.name} tier={t} context={g.title} />
                     ))}
