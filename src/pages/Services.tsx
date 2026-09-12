@@ -42,8 +42,8 @@ const includes = [
 ];
 
 const locations = [
-  { name: "Tuckahoe Recreation Club (Pass Academy)", area: "Arlington, VA" },
-  { name: "Additional DC–Virginia courts", area: "By arrangement" },
+  { name: "Tuckahoe Recreation Club (Pass Academy)", area: "McLean, VA" },
+  { name: "Tysons Corner & Greater DC Area", area: "By arrangement" },
 ];
 
 const Services = () => {
@@ -139,7 +139,7 @@ const Services = () => {
           </div>
           <div>
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">where we play</span>
-            <h2 className="mt-4 font-display text-4xl leading-tight">dc–virginia area courts.</h2>
+            <h2 className="mt-4 font-display text-4xl leading-tight">mclean, tysons corner & greater dc area.</h2>
             <ul className="mt-8 divide-y divide-border border border-border rounded-lg bg-card">
               {locations.map((l) => (
                 <li key={l.name + l.area} className="flex items-center justify-between px-5 py-4">

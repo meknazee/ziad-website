@@ -44,7 +44,7 @@ const Home = () => {
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
               one-on-one and group lessons built around your level, your goals, and your rhythm — in
-              arlington, mclean, and the greater dc area.
+              mclean, tysons corner and the greater dc area.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <button
@@ -130,8 +130,8 @@ const Home = () => {
               .
             </p>
             <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
-              courts: tuckahoe recreation club — mclean, va. serving washington dc, arlington and
-              northern virginia.
+              courts: tuckahoe recreation club — mclean, va. serving mclean, tysons corner and
+              the greater dc area.
             </p>
             <Link
               to="/services"

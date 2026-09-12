@@ -21,7 +21,7 @@ const details = [
   {
     icon: MapPin,
     label: "area",
-    value: "washington dc · arlington · northern virginia",
+    value: "mclean · tysons corner · greater dc area",
     href: null as string | null,
   },
 ];
