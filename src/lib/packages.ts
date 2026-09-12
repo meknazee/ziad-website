@@ -1,6 +1,6 @@
 export type PackageFeature = { label: string; included: boolean };
 
-export type PackagePrice = { label: string; total: string; per: string };
+export type PackagePrice = { label: string; total: string; per: string; hourlyRate?: string };
 
 export type PackageTier = {
   name: string;

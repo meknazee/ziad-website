@@ -59,8 +59,17 @@ export const PackageCard = ({ tier: p, context }: Props) => (
         {p.prices.map((price, i) => (
           <div key={price.label} className={i > 0 ? "border-l border-border pl-4" : undefined}>
             <p className="text-xs uppercase tracking-wider text-muted-foreground">{price.label}</p>
-            <p className="mt-1 font-display text-3xl">{price.total}</p>
-            <p className="text-xs text-muted-foreground">{price.per}</p>
+            {price.hourlyRate ? (
+              <>
+                <p className="mt-1 font-display text-3xl">{price.hourlyRate}</p>
+                <p className="text-xs text-muted-foreground">{price.total}</p>
+              </>
+            ) : (
+              <>
+                <p className="mt-1 font-display text-3xl">{price.total}</p>
+                <p className="text-xs text-muted-foreground">{price.per}</p>
+              </>
+            )}
           </div>
         ))}
       </div>
