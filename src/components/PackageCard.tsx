@@ -55,12 +55,21 @@ export const PackageCard = ({ tier: p, context }: Props) => (
     </ul>
 
     <div className="flex-1 px-6 pb-6 pt-7 text-center">
-      <div className={`grid gap-4 ${p.prices.length > 1 ? "grid-cols-2" : "grid-cols-1"}`}>
+      <div className={`grid gap-4 ${p.prices.length > 1 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1"}`}>
         {p.prices.map((price, i) => (
-          <div key={price.label} className={i > 0 ? "border-l border-border pl-4" : undefined}>
+          <div key={price.label} className={i > 0 ? "border-t border-border pt-4 sm:border-t-0 sm:border-l sm:pl-4 sm:pt-0" : undefined}>
             <p className="text-xs uppercase tracking-wider text-muted-foreground">{price.label}</p>
-            <p className="mt-1 font-display text-3xl">{price.total}</p>
-            <p className="text-xs text-muted-foreground">{price.per}</p>
+            {price.hourlyRate ? (
+              <>
+                <p className="mt-1 font-display text-3xl">{price.hourlyRate}</p>
+                <p className="text-xs text-muted-foreground">{price.total}</p>
+              </>
+            ) : (
+              <>
+                <p className="mt-1 font-display text-3xl">{price.total}</p>
+                <p className="text-xs text-muted-foreground">{price.per}</p>
+              </>
+            )}
           </div>
         ))}
       </div>
