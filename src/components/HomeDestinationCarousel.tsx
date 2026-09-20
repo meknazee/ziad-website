@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import academyShot from "@/assets/coach-ziad-img-academy.jpg";
 import coachZiad from "@/assets/coach-ziad-photo.png";
+import serveShot from "@/assets/coach-ziad-serve.png";
 import tennisCourts from "@/assets/coach-ziad-tennis-courts.jpg";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -16,9 +17,9 @@ const destinations = [
     description: "private coaching, group sessions, clinics and focused work for every stage of your game.",
     cta: "explore services",
     to: "/services",
-    image: coachZiad,
-    imagePosition: "object-[center_34%]",
-    alt: "coach ziad holding a tennis racket",
+    image: serveShot,
+    imagePosition: "object-center",
+    alt: "coach ziad serving on court",
   },
   {
     eyebrow: "choose your commitment",
