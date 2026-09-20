@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { CalendarCheck } from "lucide-react";
 import { openCalendly } from "@/lib/calendly";
+import { CoachAvatar } from "./CoachAvatar";
 
 export const FloatingBookCta = () => {
   const [visible, setVisible] = useState(false);
@@ -26,7 +27,8 @@ export const FloatingBookCta = () => {
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
     >
-      <CalendarCheck className="h-4 w-4" />
+      <CoachAvatar size="xs" className="ring-accent-foreground/40 ring-offset-accent" />
+      <CalendarCheck className="hidden h-4 w-4 sm:block" />
       book a session
     </button>
   );

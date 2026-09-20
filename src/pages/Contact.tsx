@@ -1,7 +1,7 @@
 import { Mail, MapPin, ArrowRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { InquiryForm } from "@/components/InquiryForm";
-import portrait from "@/assets/coach-ziad-portrait.jpg.asset.json";
+import portrait from "@/assets/coach-ziad-portrait.jpg";
 
 const CALENDLY_URL = "https://calendly.com/coach-ziad";
 
@@ -45,7 +45,7 @@ const Contact = () => {
           <div className="mx-auto lg:mx-0 max-w-[260px] lg:max-w-none">
             <div className="aspect-[4/5] overflow-hidden rounded-2xl border border-border shadow-court">
               <img
-                src={portrait.url}
+                src={portrait}
                 alt="Coach Ziad portrait"
                 className="h-full w-full object-cover"
                 loading="lazy"

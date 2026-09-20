@@ -4,6 +4,7 @@ import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { Loader2, Send, X } from "lucide-react";
+import { CoachAvatar } from "./CoachAvatar";
 
 const SERVICE_LABELS: Record<string, string> = {
   "private-1-1": "private 1:1",
@@ -101,6 +102,13 @@ export const InquiryForm = () => {
   if (sent) {
     return (
       <div className="rounded-2xl border border-border bg-card p-8">
+        <div className="flex items-center gap-3">
+          <CoachAvatar size="md" />
+          <div>
+            <p className="font-display text-lg">coach z</p>
+            <p className="text-xs text-muted-foreground">your message is in</p>
+          </div>
+        </div>
         <div className="text-xs uppercase tracking-widest text-accent font-semibold">received</div>
         <h3 className="mt-3 font-display text-2xl">thanks for reaching out.</h3>
         <p className="mt-3 text-muted-foreground">
@@ -123,6 +131,13 @@ export const InquiryForm = () => {
       onSubmit={onSubmit}
       className="rounded-2xl border border-border bg-card p-6 md:p-8 space-y-5"
     >
+      <div className="flex items-center gap-3 border-b border-border pb-5">
+        <CoachAvatar size="md" />
+        <div>
+          <p className="font-display text-lg">tell coach z about your game</p>
+          <p className="text-xs text-muted-foreground">i’ll get back to you within a day.</p>
+        </div>
+      </div>
       {services.length > 0 && (
         <div className="rounded-xl border border-accent/40 bg-accent/5 p-4">
           <div className="text-xs uppercase tracking-widest text-accent font-semibold">

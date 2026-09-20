@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Youtube } from "lucide-react";
+import { CoachAvatar } from "./CoachAvatar";
 
 const socials = [
   { icon: Instagram, label: "instagram" },
@@ -11,7 +12,10 @@ export const SiteFooter = () => {
     <footer className="border-t border-border bg-secondary/30 mt-24">
       <div className="mx-auto max-w-6xl px-6 py-12 grid gap-8 md:grid-cols-3">
         <div>
-          <div className="font-display text-lg">coach ziad&nbsp;</div>
+          <div className="flex items-center gap-3">
+            <CoachAvatar size="md" />
+            <div className="font-display text-lg">coach ziad</div>
+          </div>
           <div className="mt-4 flex items-center gap-3">
             {socials.map(({ icon: Icon, label }) => (
               <span
@@ -27,17 +31,17 @@ export const SiteFooter = () => {
           </div>
         </div>
         <div className="text-sm">
-          <div className="font-medium mb-3">Explore</div>
+          <div className="font-medium mb-3">explore</div>
           <ul className="space-y-2 text-muted-foreground">
-            <li><Link to="/about" className="hover:text-foreground">About</Link></li>
-            <li><Link to="/services" className="hover:text-foreground">Services</Link></li>
-            <li><Link to="/packages" className="hover:text-foreground">Packages</Link></li>
-            <li><Link to="/working-athlete" className="hover:text-foreground">The Library</Link></li>
-            <li><Link to="/book" className="hover:text-foreground">Book a session</Link></li>
+            <li><Link to="/about" className="hover:text-foreground">about</Link></li>
+            <li><Link to="/services" className="hover:text-foreground">services</Link></li>
+            <li><Link to="/packages" className="hover:text-foreground">packages</Link></li>
+            <li><Link to="/working-athlete" className="hover:text-foreground">the library</Link></li>
+            <li><Link to="/book" className="hover:text-foreground">book a session</Link></li>
           </ul>
         </div>
         <div className="text-sm">
-          <div className="font-medium mb-3">Contact</div>
+          <div className="font-medium mb-3">contact</div>
           <ul className="space-y-2 text-muted-foreground">
             <li><a href="mailto:contactme@coachziad.com" className="hover:text-foreground">contactme@coachziad.com</a></li>
           </ul>
@@ -45,7 +49,7 @@ export const SiteFooter = () => {
       </div>
       <div className="border-t border-border/60">
         <div className="mx-auto max-w-6xl px-6 py-5 text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Coach Z. All rights reserved.
+          © {new Date().getFullYear()} coach z. all rights reserved.
         </div>
       </div>
     </footer>

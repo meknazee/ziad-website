@@ -1,5 +1,6 @@
 import { Check, X, Mail } from "lucide-react";
 import type { PackageTier } from "@/lib/packages";
+import { CoachAvatar } from "./CoachAvatar";
 
 type Props = {
   tier: PackageTier;
@@ -85,7 +86,8 @@ export const PackageCard = ({ tier: p, context }: Props) => (
         )}`}
         className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition hover:bg-primary/90"
       >
-        <Mail className="h-4 w-4" />
+        <CoachAvatar size="xs" className="ring-primary-foreground/40 ring-offset-primary" />
+        <Mail className="hidden h-4 w-4 sm:block" />
         sign me up, coach
       </a>
     </div>
