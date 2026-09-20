@@ -25,8 +25,8 @@ const Home = () => {
       <section className="border-b border-border bg-background">
         <div className="mx-auto max-w-6xl px-6 py-6 sm:px-10">
           <h1 className="font-display text-lg leading-snug text-foreground/85 sm:text-xl">
-            coach z — private tennis coaching, group clinics, packages and the working athlete
-            playbook in mclean, tysons corner and the greater dc area.
+            coach z — professional tennis coach for young athletes and adult enthusiasts in the
+            dmv area.
           </h1>
         </div>
       </section>
