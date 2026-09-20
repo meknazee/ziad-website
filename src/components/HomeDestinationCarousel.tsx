@@ -26,7 +26,7 @@ const destinations = [
     description: "compare session lengths, pricing and perks, then choose the package that fits your goals.",
     cta: "view packages",
     to: "/packages",
-    image: courtDetail,
+    image: tennisCourts,
     imagePosition: "object-center",
     alt: "tennis courts in mclean, virginia",
   },
