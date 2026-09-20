@@ -18,8 +18,7 @@ const destinations = [
     cta: "explore services",
     to: "/services",
     image: serveShot,
-    fit: "contain",
-    imagePosition: "object-center",
+    imagePosition: "object-[52%_38%] md:object-[center_42%]",
     alt: "coach ziad serving on court",
   },
   {
@@ -29,7 +28,6 @@ const destinations = [
     cta: "view packages",
     to: "/packages",
     image: tennisCourts,
-    fit: "cover",
     imagePosition: "object-center",
     alt: "tennis courts in mclean, virginia",
   },
@@ -40,8 +38,7 @@ const destinations = [
     cta: "open the library",
     to: "/working-athlete",
     image: academyShot,
-    fit: "cover",
-    imagePosition: "object-center",
+    imagePosition: "object-[58%_center] md:object-center",
     alt: "coach ziad teaching on court",
   },
   {
@@ -51,8 +48,7 @@ const destinations = [
     cta: "get in touch",
     to: "/contact",
     image: coachZiad,
-    fit: "contain",
-    imagePosition: "object-[center_26%]",
+    imagePosition: "object-[center_24%]",
     alt: "portrait of coach ziad",
   },
 ];
@@ -88,7 +84,18 @@ export const HomeDestinationCarousel = () => {
     <section
       aria-roledescription="carousel"
       aria-label="explore coach ziad"
-      className="relative overflow-hidden bg-background"
+      className="relative overflow-hidden bg-background outline-none"
+      tabIndex={0}
+      onKeyDown={(event) => {
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          api?.scrollPrev();
+        }
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          api?.scrollNext();
+        }
+      }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
@@ -101,65 +108,55 @@ export const HomeDestinationCarousel = () => {
               key={destination.to}
               aria-roledescription="slide"
               aria-label={`${index + 1} of ${destinations.length}: ${destination.title}`}
-              className="relative min-w-0 flex-[0_0_100%]"
+              className="relative min-h-[680px] min-w-0 flex-[0_0_100%] sm:min-h-[720px] lg:min-h-[760px]"
             >
-              {/* Ambient atmosphere — blurred clay/court glow, no stretched pixels */}
-              <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-                <div className="absolute -left-32 top-10 h-[420px] w-[520px] rounded-full bg-[hsl(var(--clay)/0.22)] blur-3xl" />
-                <div className="absolute -right-40 bottom-0 h-[460px] w-[620px] rounded-full bg-[hsl(var(--court)/0.18)] blur-3xl" />
-                <div className="absolute left-1/2 top-1/2 h-[300px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[hsl(var(--clay)/0.12)] blur-3xl" />
+              <div className="absolute inset-0 bg-secondary">
+                <img
+                  src={destination.image}
+                  alt={destination.alt}
+                  className={cn(
+                    "h-full w-full object-cover transition-[opacity,transform] duration-700 motion-reduce:transition-none",
+                    destination.imagePosition,
+                    selectedIndex === index ? "scale-100 opacity-100" : "scale-[1.01] opacity-80",
+                  )}
+                  width={1600}
+                  height={900}
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
               </div>
 
-              <div className="relative mx-auto flex max-w-6xl flex-col-reverse items-center gap-10 px-6 pb-28 pt-14 md:grid md:grid-cols-[1fr_1.2fr] md:gap-14 md:pb-32 md:pt-20">
-                {/* Text overlay — sits over the ambient layer, never over the photo */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/25 to-transparent md:bg-gradient-to-r md:from-background md:via-background/70 md:to-background/5"
+              />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-primary/25 to-transparent"
+              />
+
+              <div className="relative mx-auto flex min-h-[680px] max-w-7xl items-end px-6 pb-32 pt-24 sm:min-h-[720px] sm:px-10 md:items-center md:pb-28 lg:min-h-[760px] lg:px-16">
                 <div
                   className={cn(
-                    "w-full max-w-xl self-center transition-all duration-700 motion-reduce:transition-none",
-                    selectedIndex === index ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0",
+                    "w-full max-w-xl transition-all duration-700 motion-reduce:transition-none",
+                    selectedIndex === index ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
                   )}
                 >
-                  <div className="rounded-2xl border border-border/60 bg-background/70 p-7 backdrop-blur-sm sm:p-9">
-                    <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
-                      <span className="h-px w-9 bg-accent" />
-                      {destination.eyebrow}
-                    </p>
-                    <h1 className="mt-5 font-display text-6xl leading-none sm:text-7xl md:text-8xl">
-                      {destination.title}
-                    </h1>
-                    <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-                      {destination.description}
-                    </p>
-                    <Button asChild size="lg" className="mt-8 rounded-full px-7">
-                      <Link to={destination.to}>
-                        {destination.cta}
-                        <ArrowRight aria-hidden="true" />
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-
-                {/* Photo at near-native scale inside a framed card */}
-                <div className="relative w-full">
-                  <div className="mx-auto flex h-[420px] w-full max-w-4xl items-center justify-center overflow-hidden rounded-2xl border border-border bg-card shadow-court md:h-[560px]">
-                    <img
-                      src={destination.image}
-                      alt={destination.alt}
-                      className={cn(
-                        "h-full w-full transition-transform duration-[6500ms] motion-reduce:transition-none",
-                        destination.fit === "contain" ? "object-contain" : cn("object-cover", destination.imagePosition),
-                        selectedIndex === index && "scale-[1.03]",
-                      )}
-                      width={900}
-                      height={900}
-                      loading={index === 0 ? "eager" : "lazy"}
-                    />
-                  </div>
-                  <span
-                    aria-hidden="true"
-                    className="pointer-events-none absolute -bottom-4 left-6 rounded-full bg-accent px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-accent-foreground"
-                  >
+                  <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
+                    <span className="h-px w-9 bg-accent" />
+                    {destination.eyebrow}
+                  </p>
+                  <h1 className="mt-5 font-display text-6xl leading-none text-foreground sm:text-7xl md:text-8xl">
                     {destination.title}
-                  </span>
+                  </h1>
+                  <p className="mt-5 max-w-md text-base leading-relaxed text-foreground/80 sm:text-lg">
+                    {destination.description}
+                  </p>
+                  <Button asChild size="lg" className="mt-8 rounded-full px-7">
+                    <Link to={destination.to}>
+                      {destination.cta}
+                      <ArrowRight aria-hidden="true" />
+                    </Link>
+                  </Button>
                 </div>
               </div>
             </article>
@@ -179,12 +176,12 @@ export const HomeDestinationCarousel = () => {
                 onClick={() => api?.scrollTo(index)}
                 aria-label={`show ${destination.title}`}
                 aria-current={selectedIndex === index ? "true" : undefined}
-                className="h-8 w-8 rounded-full hover:bg-foreground/10"
+                className="h-8 w-8 rounded-full bg-background/45 backdrop-blur-sm hover:bg-background/70"
               >
                 <span
                   className={cn(
                     "block h-1.5 rounded-full bg-current transition-all",
-                    selectedIndex === index ? "w-6 text-accent" : "w-1.5 text-foreground/40",
+                    selectedIndex === index ? "w-6 text-accent" : "w-1.5 text-foreground/55",
                   )}
                 />
               </Button>
@@ -198,7 +195,7 @@ export const HomeDestinationCarousel = () => {
               size="icon"
               onClick={() => api?.scrollPrev()}
               aria-label="previous destination"
-              className="rounded-full bg-background/80 backdrop-blur-sm"
+              className="rounded-full border-background/70 bg-background/75 backdrop-blur-sm"
             >
               <ArrowLeft aria-hidden="true" />
             </Button>
@@ -208,7 +205,7 @@ export const HomeDestinationCarousel = () => {
               size="icon"
               onClick={() => api?.scrollNext()}
               aria-label="next destination"
-              className="rounded-full bg-background/80 backdrop-blur-sm"
+              className="rounded-full border-background/70 bg-background/75 backdrop-blur-sm"
             >
               <ArrowRight aria-hidden="true" />
             </Button>
