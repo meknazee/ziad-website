@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import academyShot from "@/assets/coach-ziad-img-academy.jpg";
 import coachZiad from "@/assets/coach-ziad-photo.png";
-import courtDetail from "@/assets/court-detail.jpg";
+import tennisCourts from "@/assets/coach-ziad-tennis-courts.jpg";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
