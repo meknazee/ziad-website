@@ -1,7 +1,7 @@
 import { Mail, MapPin, ArrowRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { InquiryForm } from "@/components/InquiryForm";
-import portrait from "@/assets/coach-portrait.jpg";
+import portrait from "@/assets/coach-ziad-portrait.jpg";
 
 const CALENDLY_URL = "https://calendly.com/coach-ziad";
 

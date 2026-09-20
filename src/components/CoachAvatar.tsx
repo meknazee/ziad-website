@@ -1,4 +1,4 @@
-import portrait from "@/assets/coach-portrait.jpg";
+import portrait from "@/assets/coach-ziad-portrait.jpg";
 
 type CoachAvatarProps = {
   size?: "xs" | "sm" | "md";
@@ -17,6 +17,6 @@ export const CoachAvatar = ({ size = "sm", className = "" }: CoachAvatarProps) =
     alt="coach ziad"
     width={96}
     height={96}
-    className={`${sizes[size]} shrink-0 rounded-full object-cover object-[center_22%] ring-primary ring-offset-2 ring-offset-background ${className}`}
+    className={`${sizes[size]} shrink-0 rounded-full object-cover object-[center_25%] ring-primary ring-offset-2 ring-offset-background ${className}`}
   />
 );
