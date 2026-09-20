@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import academyShot from "@/assets/coach-ziad-img-academy.jpg";
 import coachZiad from "@/assets/coach-ziad-photo.png";
-import courtDetail from "@/assets/court-detail.jpg";
+import tennisCourts from "@/assets/coach-ziad-tennis-courts.jpg";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -26,7 +26,7 @@ const destinations = [
     description: "compare session lengths, pricing and perks, then choose the package that fits your goals.",
     cta: "view packages",
     to: "/packages",
-    image: courtDetail,
+    image: tennisCourts,
     imagePosition: "object-center",
     alt: "tennis courts in mclean, virginia",
   },
