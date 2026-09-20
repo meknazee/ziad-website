@@ -10,7 +10,7 @@ const links = [
   { to: "/contact", label: "Contact" },
   { to: "/services", label: "Services" },
   { to: "/packages", label: "Packages" },
-  { to: "/working-athlete", label: "Library" },
+  { to: "/playbook", label: "playbook" },
 ];
 
 export const SiteHeader = () => {
