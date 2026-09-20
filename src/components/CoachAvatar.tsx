@@ -1,4 +1,4 @@
-import portrait from "@/assets/coach-ziad-portrait.jpg.asset.json";
+import portrait from "@/assets/coach-portrait.jpg";
 
 type CoachAvatarProps = {
   size?: "xs" | "sm" | "md";
@@ -13,7 +13,7 @@ const sizes = {
 
 export const CoachAvatar = ({ size = "sm", className = "" }: CoachAvatarProps) => (
   <img
-    src={portrait.url}
+    src={portrait}
     alt="coach ziad"
     width={96}
     height={96}
