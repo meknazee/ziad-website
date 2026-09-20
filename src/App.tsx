@@ -31,11 +31,12 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/services" element={<Services />} />
             <Route path="/packages" element={<Packages />} />
-            <Route path="/working-athlete" element={<WorkingAthlete />} />
+            <Route path="/playbook" element={<WorkingAthlete />} />
+            <Route path="/working-athlete" element={<Navigate to="/playbook" replace />} />
             {/* Redirect the old route so existing links don't 404 */}
             <Route
               path="/strength-conditioning"
-              element={<Navigate to="/working-athlete" replace />}
+              element={<Navigate to="/playbook" replace />}
             />
             <Route path="/book" element={<Book />} />
             <Route path="/book/success" element={<BookSuccess />} />

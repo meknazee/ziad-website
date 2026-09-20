@@ -3,7 +3,7 @@ import { ArrowRight, ArrowUpRight, Lock, Sparkles } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { SESPillarsChart } from "@/components/SES/SESPillarsChart";
 
-const LIBRARY_URL = "https://coachz-athletelibrary.lovable.app";
+const PLAYBOOK_URL = "https://coachz-athletelibrary.lovable.app";
 
 type ProgramStatus = "featured" | "active" | "in-review" | "coming-soon";
 
@@ -76,22 +76,22 @@ const WorkingAthlete = () => {
   return (
     <Layout>
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-12">
-        <span className="text-xs uppercase tracking-[0.2em] text-accent">The Working Athlete</span>
+        <span className="text-xs uppercase tracking-[0.2em] text-accent">the working athlete playbook</span>
         <h1 className="mt-4 font-display text-5xl md:text-6xl leading-[1] max-w-3xl">
-          A library for the player who <em className="text-accent not-italic">trains like one</em>.
+          train like a pro. <em className="text-accent not-italic">take your game to the next level.</em>
         </h1>
         <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
-          Field manuals from Coach Z — running, strength, tennis, recovery. Free to read.
-          A few are still in the workshop. The first one is open right now.
+          proven methods from coach z for running, strength, tennis and recovery. free to read,
+          built to apply and ready to take from the page to the court.
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <a
-            href={LIBRARY_URL}
+            href={PLAYBOOK_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-background font-medium hover:bg-foreground/90 transition group"
           >
-            Open the Library
+            open the playbook
             <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
           </a>
           <Link
@@ -111,7 +111,7 @@ const WorkingAthlete = () => {
             return (
               <a
                 key={p.title}
-                href={LIBRARY_URL}
+                href={PLAYBOOK_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`group relative rounded-2xl border bg-card p-6 transition hover:-translate-y-0.5 hover:border-accent/50 ${
@@ -131,7 +131,7 @@ const WorkingAthlete = () => {
                 <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-foreground/80 group-hover:gap-3 transition-all">
                   {isOpen ? (
                     <>
-                      Read in the Library <ArrowUpRight className="h-4 w-4" />
+                      read in the playbook <ArrowUpRight className="h-4 w-4" />
                     </>
                   ) : p.status === "in-review" ? (
                     <>
@@ -158,8 +158,8 @@ const WorkingAthlete = () => {
             Strength. Endurance. Skills. The three pillars every manual leans on.
           </h2>
           <p className="mt-5 text-muted-foreground max-w-2xl">
-            The Working Athlete library is built around the same SES framework Coach Z teaches
-            in his strength &amp; conditioning sessions. Read the manuals, then bring questions
+            the working athlete playbook is built around the same proven ses framework coach z teaches
+            in his strength &amp; conditioning sessions. read the manuals, then bring questions
             to the court.
           </p>
           <div className="mt-10">
