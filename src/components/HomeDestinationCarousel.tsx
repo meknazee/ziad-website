@@ -127,7 +127,7 @@ export const HomeDestinationCarousel = () => {
 
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/25 to-transparent md:bg-gradient-to-r md:from-background md:via-background/70 md:to-background/5"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent md:bg-gradient-to-r md:from-background md:via-background/70 md:to-background/5"
               />
               <div
                 aria-hidden="true"
