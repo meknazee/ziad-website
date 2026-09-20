@@ -1,16 +1,11 @@
 import { Link, useSearchParams } from "react-router-dom";
-import { ArrowRight, Users, Trophy, CalendarDays, ChevronDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { Layout } from "@/components/Layout";
-import { HeroVideo } from "@/components/HeroVideo";
+import { HomeDestinationCarousel } from "@/components/HomeDestinationCarousel";
 import { ProgramFinder } from "@/components/ProgramFinder";
 import { CalendlyInline } from "@/components/CalendlyInline";
 import { InquiryForm } from "@/components/InquiryForm";
-import { openCalendly } from "@/lib/calendly";
-import portrait from "@/assets/coach-ziad-portrait.jpg.asset.json";
-
-/** drop an mp4 clip in src/assets and import it here to turn the hero into video */
-const HERO_VIDEO_SRC: string | undefined = undefined;
 
 const Home = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -26,61 +21,8 @@ const Home = () => {
 
   return (
     <Layout>
-      {/* Step 1 — video hook */}
-      <section className="relative overflow-hidden">
-        <HeroVideo
-          src={HERO_VIDEO_SRC}
-          poster={portrait.url}
-          alt="coach ziad on the tennis court"
-        />
-        <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-accent font-semibold">
-              <span className="h-px w-8 bg-accent" /> private tennis coaching
-            </span>
-            <h1 className="mt-6 font-display text-5xl md:text-7xl leading-[0.95]">
-              sharper game.<br />
-              <span className="italic text-accent">every shot.</span>
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
-              one-on-one and group lessons built around your level, your goals, and your rhythm — in
-              mclean, tysons corner and the greater dc area.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <button
-                type="button"
-                onClick={() => openCalendly()}
-                className="inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-background font-medium hover:bg-foreground/90 transition group"
-              >
-                book a session
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
-              </button>
-              <a
-                href="#programs"
-                className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-7 py-3.5 text-sm font-medium hover:border-accent transition"
-              >
-                find your program
-                <ChevronDown className="h-4 w-4" />
-              </a>
-            </div>
-
-            <div className="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-foreground/15 pt-8">
-              {[
-                { icon: Users, label: "every age" },
-                { icon: Trophy, label: "every level" },
-                { icon: CalendarDays, label: "all year long" },
-              ].map(({ icon: Icon, label }) => (
-                <div key={label} className="flex flex-col items-start gap-2">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent/15 text-accent">
-                    <Icon className="h-4 w-4" strokeWidth={2.25} />
-                  </span>
-                  <div className="text-xs uppercase tracking-widest font-medium">{label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Step 1 — swipeable website destinations */}
+      <HomeDestinationCarousel />
 
       {/* Step 2 — which program is right for you */}
       <ProgramFinder onApply={applyTrack} />
