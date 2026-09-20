@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { openCalendly } from "@/lib/calendly";
+import { CoachAvatar } from "./CoachAvatar";
 
 const links = [
   { to: "/", label: "Home", end: true },
@@ -25,9 +26,9 @@ export const SiteHeader = () => {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link to="/" className="flex items-center gap-2 font-display text-xl tracking-tight">
-          <span className="inline-block h-2.5 w-2.5 rounded-full bg-accent" />
-          Coach Z
-          <span className="text-muted-foreground font-sans text-xs ml-1 hidden sm:inline">/ Tennis Coach</span>
+          <CoachAvatar size="sm" />
+          coach z
+          <span className="text-muted-foreground font-sans text-xs ml-1 hidden sm:inline">/ tennis coach</span>
         </Link>
         <nav className="hidden md:flex items-center gap-7 text-sm">
           {links.map((l) => (

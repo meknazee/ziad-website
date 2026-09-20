@@ -3,6 +3,7 @@ import { ArrowRight, FileDown, Mail, Target, CalendarCheck } from "lucide-react"
 import { openCalendly } from "@/lib/calendly";
 import { Layout } from "@/components/Layout";
 import { PackageCard } from "@/components/PackageCard";
+import { CoachAvatar } from "@/components/CoachAvatar";
 import {
   privateTiers,
   clinicGroups,
@@ -163,7 +164,8 @@ const Packages = () => (
                      )}`}
                      className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:bg-primary/90"
                    >
-                     <Mail className="h-4 w-4" />
+                     <CoachAvatar size="xs" className="ring-primary-foreground/40 ring-offset-primary" />
+                     <Mail className="hidden h-4 w-4 sm:block" />
                      sign me up, coach
                    </a>
                 </div>

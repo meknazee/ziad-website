@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { CALENDLY_URL, loadCalendly } from "@/lib/calendly";
+import { CoachAvatar } from "./CoachAvatar";
 
 export const CalendlyInline = ({
   url = CALENDLY_URL,
@@ -30,6 +31,13 @@ export const CalendlyInline = ({
 
   return (
     <div className="rounded-2xl border border-border bg-card overflow-hidden">
+      <div className="flex items-center gap-3 border-b border-border px-6 py-4">
+        <CoachAvatar size="sm" />
+        <div>
+          <p className="font-display text-lg">book with coach z</p>
+          <p className="text-xs text-muted-foreground">choose a time that works for you</p>
+        </div>
+      </div>
       <div ref={ref} style={{ minWidth: 320, height }} />
       <div className="border-t border-border px-6 py-4 text-sm text-muted-foreground">
         calendar not loading?{" "}
