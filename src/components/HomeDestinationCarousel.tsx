@@ -18,7 +18,7 @@ const destinations = [
     cta: "explore services",
     to: "/services",
     image: serveShot,
-    imagePosition: "object-center",
+    imagePosition: "object-[center_20%]",
     alt: "coach ziad serving on court",
   },
   {
@@ -84,7 +84,7 @@ export const HomeDestinationCarousel = () => {
     <section
       aria-roledescription="carousel"
       aria-label="explore coach ziad"
-      className="relative overflow-hidden bg-foreground"
+      className="relative overflow-hidden bg-background"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
@@ -97,27 +97,13 @@ export const HomeDestinationCarousel = () => {
               key={destination.to}
               aria-roledescription="slide"
               aria-label={`${index + 1} of ${destinations.length}: ${destination.title}`}
-              className="relative min-w-0 flex-[0_0_100%] h-[min(720px,calc(100svh-5rem))] min-h-[590px]"
+              className="relative min-w-0 flex-[0_0_100%]"
             >
-              <img
-                src={destination.image}
-                alt={destination.alt}
-                className={cn(
-                  "absolute inset-0 h-full w-full object-cover transition-transform duration-[6500ms] motion-reduce:transition-none",
-                  destination.imagePosition,
-                  selectedIndex === index && "scale-[1.035]",
-                )}
-                width={1600}
-                height={1200}
-                loading={index === 0 ? "eager" : "lazy"}
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/55 to-foreground/10" />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/75 via-transparent to-foreground/15" />
-
-              <div className="relative mx-auto flex h-full max-w-6xl items-end px-6 pb-28 pt-20 md:items-center md:pb-20">
+              <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 pb-28 pt-16 md:grid-cols-2 md:gap-14 md:pb-32 md:pt-24">
+                {/* Text panel */}
                 <div
                   className={cn(
-                    "max-w-2xl text-primary-foreground transition-all duration-700 motion-reduce:transition-none",
+                    "max-w-xl transition-all duration-700 motion-reduce:transition-none",
                     selectedIndex === index ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0",
                   )}
                 >
@@ -125,18 +111,42 @@ export const HomeDestinationCarousel = () => {
                     <span className="h-px w-9 bg-accent" />
                     {destination.eyebrow}
                   </p>
-                  <h1 className="mt-5 text-6xl leading-none sm:text-7xl md:text-8xl">
+                  <h1 className="mt-5 font-display text-6xl leading-none sm:text-7xl md:text-8xl">
                     {destination.title}
                   </h1>
-                  <p className="mt-5 max-w-xl text-base leading-relaxed text-primary-foreground/85 sm:text-lg">
+                  <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
                     {destination.description}
                   </p>
-                  <Button asChild size="lg" className="mt-8 rounded-full bg-accent px-7 text-accent-foreground hover:bg-accent/90">
+                  <Button asChild size="lg" className="mt-8 rounded-full px-7">
                     <Link to={destination.to}>
                       {destination.cta}
                       <ArrowRight aria-hidden="true" />
                     </Link>
                   </Button>
+                </div>
+
+                {/* Image card — shown at native-ish scale, never stretched */}
+                <div className="relative mx-auto w-full max-w-md md:max-w-none">
+                  <div className="overflow-hidden rounded-2xl border border-border shadow-court">
+                    <img
+                      src={destination.image}
+                      alt={destination.alt}
+                      className={cn(
+                        "h-[380px] w-full object-cover transition-transform duration-[6500ms] motion-reduce:transition-none sm:h-[440px] md:h-[520px]",
+                        destination.imagePosition,
+                        selectedIndex === index && "scale-[1.03]",
+                      )}
+                      width={900}
+                      height={1200}
+                      loading={index === 0 ? "eager" : "lazy"}
+                    />
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -bottom-4 left-6 rounded-full bg-accent px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-accent-foreground"
+                  >
+                    {destination.title}
+                  </span>
                 </div>
               </div>
             </article>
@@ -156,12 +166,12 @@ export const HomeDestinationCarousel = () => {
                 onClick={() => api?.scrollTo(index)}
                 aria-label={`show ${destination.title}`}
                 aria-current={selectedIndex === index ? "true" : undefined}
-                className="h-8 w-8 rounded-full text-primary-foreground hover:bg-primary-foreground/15 hover:text-primary-foreground"
+                className="h-8 w-8 rounded-full hover:bg-foreground/10"
               >
                 <span
                   className={cn(
                     "block h-1.5 rounded-full bg-current transition-all",
-                    selectedIndex === index ? "w-6 text-accent" : "w-1.5 text-primary-foreground/60",
+                    selectedIndex === index ? "w-6 text-accent" : "w-1.5 text-foreground/40",
                   )}
                 />
               </Button>
@@ -171,21 +181,21 @@ export const HomeDestinationCarousel = () => {
           <div className="pointer-events-auto flex gap-2">
             <Button
               type="button"
-              variant="secondary"
+              variant="outline"
               size="icon"
               onClick={() => api?.scrollPrev()}
               aria-label="previous destination"
-              className="rounded-full bg-primary-foreground text-foreground hover:bg-primary-foreground/85"
+              className="rounded-full"
             >
               <ArrowLeft aria-hidden="true" />
             </Button>
             <Button
               type="button"
-              variant="secondary"
+              variant="outline"
               size="icon"
               onClick={() => api?.scrollNext()}
               aria-label="next destination"
-              className="rounded-full bg-primary-foreground text-foreground hover:bg-primary-foreground/85"
+              className="rounded-full"
             >
               <ArrowRight aria-hidden="true" />
             </Button>
