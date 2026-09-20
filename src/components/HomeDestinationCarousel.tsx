@@ -145,9 +145,9 @@ export const HomeDestinationCarousel = () => {
                     <span className="h-px w-9 bg-accent" />
                     {destination.eyebrow}
                   </p>
-                  <h1 className="mt-5 font-display text-6xl leading-none text-foreground sm:text-7xl md:text-8xl">
+                  <h2 className="mt-5 font-display text-6xl leading-none text-foreground sm:text-7xl md:text-8xl">
                     {destination.title}
-                  </h1>
+                  </h2>
                   <p className="mt-5 max-w-md text-base leading-relaxed text-foreground/80 sm:text-lg">
                     {destination.description}
                   </p>
