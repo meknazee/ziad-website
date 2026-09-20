@@ -3,9 +3,9 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import academyShot from "@/assets/coach-ziad-img-academy.jpg";
 import coachZiad from "@/assets/coach-ziad-photo.png";
 import courtDetail from "@/assets/court-detail.jpg";
-import heroCourt from "@/assets/hero-court.jpg";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -36,9 +36,9 @@ const destinations = [
     description: "field manuals for building strength, endurance and skill — made to move from page to court.",
     cta: "open the library",
     to: "/working-athlete",
-    image: heroCourt,
+    image: academyShot,
     imagePosition: "object-center",
-    alt: "tennis racket and ball arranged on a green court",
+    alt: "coach ziad teaching on court",
   },
   {
     eyebrow: "start the conversation",
