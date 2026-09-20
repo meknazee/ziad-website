@@ -3,10 +3,9 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import academy from "@/assets/coach-ziad-img-academy.jpg.asset.json";
-import portrait from "@/assets/coach-ziad-portrait.jpg.asset.json";
-import courts from "@/assets/coach-ziad-tennis-courts.jpg.asset.json";
+import coachZiad from "@/assets/coach-ziad-photo.png";
 import courtDetail from "@/assets/court-detail.jpg";
+import heroCourt from "@/assets/hero-court.jpg";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -17,9 +16,9 @@ const destinations = [
     description: "private coaching, group sessions, clinics and focused work for every stage of your game.",
     cta: "explore services",
     to: "/services",
-    image: academy.url,
-    imagePosition: "object-center",
-    alt: "coach ziad leading a tennis session on court",
+    image: coachZiad,
+    imagePosition: "object-[center_34%]",
+    alt: "coach ziad holding a tennis racket",
   },
   {
     eyebrow: "choose your commitment",
@@ -27,7 +26,7 @@ const destinations = [
     description: "compare session lengths, pricing and perks, then choose the package that fits your goals.",
     cta: "view packages",
     to: "/packages",
-    image: courts.url,
+    image: courtDetail,
     imagePosition: "object-center",
     alt: "tennis courts in mclean, virginia",
   },
@@ -37,7 +36,7 @@ const destinations = [
     description: "field manuals for building strength, endurance and skill — made to move from page to court.",
     cta: "open the library",
     to: "/working-athlete",
-    image: courtDetail,
+    image: heroCourt,
     imagePosition: "object-center",
     alt: "tennis racket and ball arranged on a green court",
   },
@@ -47,8 +46,8 @@ const destinations = [
     description: "tell coach z about your game, your schedule and what you want to accomplish next.",
     cta: "get in touch",
     to: "/contact",
-    image: portrait.url,
-    imagePosition: "object-[center_28%]",
+    image: coachZiad,
+    imagePosition: "object-[center_26%]",
     alt: "portrait of coach ziad",
   },
 ];
