@@ -23,7 +23,7 @@ const programs: {
     status: "featured",
   },
   {
-    title: "Tennis Summer Playbook",
+    title: "Off-season Playbook",
     category: "Summer",
     duration: "12 weeks",
     description:
