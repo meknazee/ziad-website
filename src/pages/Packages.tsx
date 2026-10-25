@@ -44,7 +44,7 @@ const Packages = () => (
       <div className="mt-8 flex flex-wrap gap-3">
         <button
           type="button"
-          onClick={() => openCalendly()}
+          onClick={() => openCal()}
           className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-medium text-accent-foreground transition hover:bg-accent/90"
         >
           <CalendarCheck className="h-4 w-4" />
@@ -174,7 +174,7 @@ const Packages = () => (
             <div className="mt-8 flex flex-wrap gap-3">
               <button
                 type="button"
-                onClick={() => openCalendly()}
+                onClick={() => openCal()}
                 className="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition hover:bg-accent/90"
               >
                 <CalendarCheck className="h-4 w-4" />
