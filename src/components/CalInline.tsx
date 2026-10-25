@@ -1,0 +1,50 @@
+import { useEffect, useRef } from "react";
+import { CAL_URL, inlineCal } from "@/lib/cal";
+import { CoachAvatar } from "./CoachAvatar";
+
+export const CalInline = ({
+  url = CAL_URL,
+  height = 700,
+}: {
+  url?: string;
+  height?: number;
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    if (ref.current) {
+      inlineCal(ref.current).catch(() => {
+        /* fallback link stays visible below */
+      });
+    }
+    return () => {
+      cancelled = true;
+    };
+  }, [url]);
+
+  return (
+    <div className="rounded-2xl border border-border bg-card overflow-hidden">
+      <div className="flex items-center gap-3 border-b border-border px-6 py-4">
+        <CoachAvatar size="sm" />
+        <div>
+          <p className="font-display text-lg">book with coach z</p>
+          <p className="text-xs text-muted-foreground">choose a time that works for you</p>
+        </div>
+      </div>
+      <div ref={ref} style={{ minWidth: 320, height }} />
+      <div className="border-t border-border px-6 py-4 text-sm text-muted-foreground">
+        calendar not loading?{" "}
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 decoration-accent/40 hover:decoration-accent text-foreground"
+        >
+          open it in a new tab
+        </a>
+        .
+      </div>
+    </div>
+  );
+};
