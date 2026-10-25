@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { CalendarCheck, ArrowRight } from "lucide-react";
 import { sessionPrograms, athleteTracks, type Program } from "@/lib/programs";
-import { openCalendly } from "@/lib/calendly";
+import { openCal } from "@/lib/cal";
 
 const Card = ({
   program,
@@ -65,7 +65,7 @@ export const ProgramFinder = ({ onApply }: { onApply?: (slug: string) => void })
         </div>
         <div className="mt-5 grid gap-6 md:grid-cols-3">
           {sessionPrograms.map((p) => (
-            <Card key={p.slug} program={p} action="book" onClick={() => openCalendly()} />
+            <Card key={p.slug} program={p} action="book" onClick={() => openCal()} />
           ))}
         </div>
       </div>

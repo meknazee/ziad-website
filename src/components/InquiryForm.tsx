@@ -115,7 +115,7 @@ export const InquiryForm = () => {
           coach z will follow up by email within a day. want to lock in a time now?
         </p>
         <a
-          href="https://calendly.com/coach-ziad"
+          href="https://cal.com/coach-ziad"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-background text-sm font-medium hover:bg-foreground/90"

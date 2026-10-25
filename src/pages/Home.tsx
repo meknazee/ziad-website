@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { HomeDestinationCarousel } from "@/components/HomeDestinationCarousel";
 import { ProgramFinder } from "@/components/ProgramFinder";
-import { CalendlyInline } from "@/components/CalendlyInline";
+import { CalInline } from "@/components/CalInline";
 import { InquiryForm } from "@/components/InquiryForm";
 
 const Home = () => {
@@ -62,7 +62,7 @@ const Home = () => {
           back to you within a day.
         </p>
         <div className="mt-10">
-          <CalendlyInline />
+          <CalInline />
         </div>
       </section>
 

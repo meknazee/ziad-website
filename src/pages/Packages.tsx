@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, FileDown, Mail, Target, CalendarCheck } from "lucide-react";
-import { openCalendly } from "@/lib/calendly";
+import { openCal } from "@/lib/cal";
 import { Layout } from "@/components/Layout";
 import { PackageCard } from "@/components/PackageCard";
 import { CoachAvatar } from "@/components/CoachAvatar";
