@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { CalendarCheck } from "lucide-react";
-import { openCalendly } from "@/lib/calendly";
+import { openCal } from "@/lib/cal";
 import { CoachAvatar } from "./CoachAvatar";
 
 export const FloatingBookCta = () => {
@@ -21,7 +21,7 @@ export const FloatingBookCta = () => {
   return (
     <button
       type="button"
-      onClick={() => openCalendly()}
+      onClick={() => openCal()}
       aria-label="book a session"
       className={`fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-accent-foreground text-sm font-medium shadow-lg transition-all duration-300 hover:opacity-95 hover:-translate-y-0.5 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"

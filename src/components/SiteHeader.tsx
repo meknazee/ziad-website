@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { openCalendly } from "@/lib/calendly";
+import { openCal } from "@/lib/cal";
 import { CoachAvatar } from "./CoachAvatar";
 
 const links = [
@@ -45,7 +45,7 @@ export const SiteHeader = () => {
           ))}
           <button
             type="button"
-            onClick={() => openCalendly()}
+            onClick={() => openCal()}
             className={`rounded-full px-5 py-2 transition-all duration-300 ${
               emphasize
                 ? "bg-accent text-accent-foreground shadow-md scale-105"

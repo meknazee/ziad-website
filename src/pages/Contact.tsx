@@ -3,7 +3,7 @@ import { Layout } from "@/components/Layout";
 import { InquiryForm } from "@/components/InquiryForm";
 import portrait from "@/assets/coach-ziad-portrait.jpg";
 
-const CALENDLY_URL = "https://calendly.com/coach-ziad";
+const CAL_URL = "https://cal.com/coach-ziad";
 
 const details = [
   {
@@ -81,7 +81,7 @@ const Contact = () => {
           })}
 
           <a
-            href={CALENDLY_URL}
+            href={CAL_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-background font-medium hover:bg-foreground/90 transition group"

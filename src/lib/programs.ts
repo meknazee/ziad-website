@@ -5,7 +5,7 @@ export type Program = {
   detail: string;
 };
 
-/** on-court sessions — bookable through calendly */
+/** on-court sessions — bookable through cal.com */
 export const sessionPrograms: Program[] = [
   {
     slug: "private-lessons",

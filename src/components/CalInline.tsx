@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
-import { CALENDLY_URL, loadCalendly } from "@/lib/calendly";
+import { CAL_URL, inlineCal } from "@/lib/cal";
 import { CoachAvatar } from "./CoachAvatar";
 
-export const CalendlyInline = ({
-  url = CALENDLY_URL,
+export const CalInline = ({
+  url = CAL_URL,
   height = 700,
 }: {
   url?: string;
@@ -13,17 +13,11 @@ export const CalendlyInline = ({
 
   useEffect(() => {
     let cancelled = false;
-    loadCalendly()
-      .then(() => {
-        if (cancelled || !ref.current) return;
-        const calendly = (window as any).Calendly;
-        if (!calendly?.initInlineWidget) return;
-        ref.current.innerHTML = "";
-        calendly.initInlineWidget({ url, parentElement: ref.current });
-      })
-      .catch(() => {
+    if (ref.current) {
+      inlineCal(ref.current).catch(() => {
         /* fallback link stays visible below */
       });
+    }
     return () => {
       cancelled = true;
     };

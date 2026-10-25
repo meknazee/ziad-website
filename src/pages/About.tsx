@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import actionShot from "@/assets/coach-ziad-img-academy.jpg.asset.json";
 
-const CALENDLY_URL = "https://calendly.com/coach-ziad";
+const CAL_URL = "https://cal.com/coach-ziad";
 
 const offerings = [
   "Private & semi-private lessons",
@@ -63,7 +63,7 @@ const About = () => {
 
             <div className="mt-10">
               <a
-                href={CALENDLY_URL}
+                href={CAL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-background font-medium hover:bg-foreground/90 transition group"
